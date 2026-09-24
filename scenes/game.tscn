@@ -2,52 +2,64 @@
 
 [ext_resource type="Script" uid="uid://d1f843ey1svfb" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cspp73gjldpwg" path="res://scenes/bench_top.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://icon.svg" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://tpe65j26vyje" path="res://scenes/Ingredients/test_ingredient1.tscn" id="2_yqjtg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
-size = Vector2(128, 126)
+[ext_resource type="PackedScene" uid="uid://v0lweanbyfld" path="res://scenes/shelf.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://ckdex6j13iw30" path="res://scenes/cup.tscn" id="5_p57ef"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xrivr"]
 
 [node name="game" type="Node2D" unique_id=2122610920]
 script = ExtResource("1_lnu2h")
 
-[node name="Rotator" type="StaticBody2D" parent="." unique_id=1465350922]
-position = Vector2(232.99998, 227.99998)
-rotation = 0.77792645
-
-[node name="Sprite2D" type="Sprite2D" parent="Rotator" unique_id=387874383]
-texture = ExtResource("2_lbhrr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotator" unique_id=863358226]
-shape = SubResource("RectangleShape2D_xrivr")
-
-[node name="BenchTop" parent="." unique_id=1935621242 instance=ExtResource("1_uwrxv")]
-position = Vector2(-2, 278)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=130225076]
 
-[node name="BoundaryLeft" type="StaticBody2D" parent="." unique_id=2014722202]
+[node name="Kitchen" type="Node2D" parent="." unique_id=1954870813]
+
+[node name="Boundaries" type="Node2D" parent="Kitchen" unique_id=115915745]
+
+[node name="BoundaryLeft" type="StaticBody2D" parent="Kitchen/Boundaries" unique_id=2014722202]
 position = Vector2(-579, 0)
 rotation = 1.5707964
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryLeft" unique_id=1298629133]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Boundaries/BoundaryLeft" unique_id=1298629133]
 shape = SubResource("WorldBoundaryShape2D_xrivr")
 
-[node name="BoundaryRight" type="StaticBody2D" parent="." unique_id=1002026951]
+[node name="BoundaryRight" type="StaticBody2D" parent="Kitchen/Boundaries" unique_id=1002026951]
 position = Vector2(575, 0)
 rotation = -1.5707964
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryRight" unique_id=1199397197]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Boundaries/BoundaryRight" unique_id=1199397197]
 shape = SubResource("WorldBoundaryShape2D_xrivr")
 
-[node name="BoundaryTop" type="StaticBody2D" parent="." unique_id=67640444]
+[node name="BoundaryTop" type="StaticBody2D" parent="Kitchen/Boundaries" unique_id=67640444]
 position = Vector2(0, -450)
-rotation = 3.1415927
+rotation = -3.1415925
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryTop" unique_id=76470245]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Boundaries/BoundaryTop" unique_id=76470245]
 shape = SubResource("WorldBoundaryShape2D_xrivr")
 
-[node name="TestIngredient1" parent="." unique_id=87222405 instance=ExtResource("2_yqjtg")]
-position = Vector2(190, -27)
+[node name="BoundaryBottom" type="StaticBody2D" parent="Kitchen/Boundaries" unique_id=1429489701]
+position = Vector2(0, 326)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Boundaries/BoundaryBottom" unique_id=432527184]
+shape = SubResource("WorldBoundaryShape2D_xrivr")
+
+[node name="Ingredients" type="Node2D" parent="Kitchen" unique_id=1849979381]
+
+[node name="TestIngredient1" parent="Kitchen/Ingredients" unique_id=87222405 instance=ExtResource("2_yqjtg")]
+position = Vector2(-446, -186)
+
+[node name="TestIngredient2" parent="Kitchen/Ingredients" unique_id=582164281 instance=ExtResource("2_yqjtg")]
+position = Vector2(-286, -188)
+
+[node name="TestIngredient3" parent="Kitchen/Ingredients" unique_id=308905303 instance=ExtResource("2_yqjtg")]
+position = Vector2(-133, -189)
+
+[node name="BenchTop" parent="Kitchen" unique_id=1935621242 instance=ExtResource("1_uwrxv")]
+position = Vector2(-2, 278)
+
+[node name="Shelf" parent="Kitchen" unique_id=420292646 instance=ExtResource("5_iywne")]
+position = Vector2(-303, -70)
+
+[node name="Cup" parent="." unique_id=664389584 instance=ExtResource("5_p57ef")]
+position = Vector2(324, 133)

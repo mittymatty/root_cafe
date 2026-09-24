@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://v0lweanbyfld"]
+
+[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://icon.svg" id="1_eyi4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj574"]
+size = Vector2(471, 16)
+
+[node name="Shelf" type="StaticBody2D" unique_id=420292646]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1558847836]
+modulate = Color(0.82390225, 0.18375319, 6.6420434e-06, 1)
+position = Vector2(-196.05988, 22.679996)
+scale = Vector2(0.08593759, 0.35687497)
+texture = ExtResource("1_eyi4x")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1922854781]
+modulate = Color(0.82390225, 0.18375319, 6.6420434e-06, 1)
+position = Vector2(189.44012, 22.679998)
+scale = Vector2(0.08593759, 0.35687497)
+texture = ExtResource("1_eyi4x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1935453096]
+modulate = Color(0.82390225, 0.18375319, 6.6420434e-06, 1)
+position = Vector2(0.22006226, 0.6799984)
+scale = Vector2(3.6753135, 0.119999975)
+texture = ExtResource("1_eyi4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1112035208]
+position = Vector2(-0.05987549, 0.6799984)
+shape = SubResource("RectangleShape2D_xj574")
