@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://d20agtqda16r6"]
+
+[ext_resource type="Script" uid="uid://d1f843ey1svfb" path="res://scenes/game.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cspp73gjldpwg" path="res://scenes/bench_top.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://icon.svg" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://tpe65j26vyje" path="res://scenes/Ingredients/test_ingredient1.tscn" id="2_yqjtg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(128, 126)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xrivr"]
+
+[node name="game" type="Node2D" unique_id=2122610920]
+script = ExtResource("1_lnu2h")
+
+[node name="Rotator" type="StaticBody2D" parent="." unique_id=1465350922]
+position = Vector2(232.99998, 227.99998)
+rotation = 0.77792645
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotator" unique_id=387874383]
+texture = ExtResource("2_lbhrr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotator" unique_id=863358226]
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="BenchTop" parent="." unique_id=1935621242 instance=ExtResource("1_uwrxv")]
+position = Vector2(-2, 278)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=130225076]
+
+[node name="BoundaryLeft" type="StaticBody2D" parent="." unique_id=2014722202]
+position = Vector2(-579, 0)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryLeft" unique_id=1298629133]
+shape = SubResource("WorldBoundaryShape2D_xrivr")
+
+[node name="BoundaryRight" type="StaticBody2D" parent="." unique_id=1002026951]
+position = Vector2(575, 0)
+rotation = -1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryRight" unique_id=1199397197]
+shape = SubResource("WorldBoundaryShape2D_xrivr")
+
+[node name="BoundaryTop" type="StaticBody2D" parent="." unique_id=67640444]
+position = Vector2(0, -450)
+rotation = 3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryTop" unique_id=76470245]
+shape = SubResource("WorldBoundaryShape2D_xrivr")
+
+[node name="TestIngredient1" parent="." unique_id=87222405 instance=ExtResource("2_yqjtg")]
+position = Vector2(190, -27)

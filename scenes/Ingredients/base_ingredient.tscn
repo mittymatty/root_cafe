@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b84qjw5hgfflg"]
+
+[ext_resource type="Script" uid="uid://dmyylwylpx47d" path="res://scripts/base_ingredient.gd" id="1_f5gp5"]
+[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://icon.svg" id="2_blv4x"]
+
+[node name="BaseIngredient" type="RigidBody2D" unique_id=87222405 groups=["draggable_ingredients"]]
+collision_layer = 2
+collision_mask = 9
+input_pickable = true
+freeze_mode = 1
+continuous_cd = 1
+script = ExtResource("1_f5gp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1392852514]
+texture = ExtResource("2_blv4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=139424697]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
