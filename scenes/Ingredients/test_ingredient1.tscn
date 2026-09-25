@@ -22,10 +22,13 @@ modulate = Color(1, 0.34901962, 1, 1)
 [node name="Collision" parent="." index="1" unique_id=139424697]
 shape = SubResource("CircleShape2D_0pjbo")
 
-[node name="PourCast" parent="." index="2" unique_id=798074953]
-target_position = Vector2(109.5, -31.75)
-hit_from_inside = true
+[node name="PourParticles" parent="." index="2" unique_id=355776253]
+amount = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=468146478]
 position = Vector2(0, 32)
 shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="PourCast" parent="." index="4" unique_id=798074953]
+rotation = -1.7453293
+hit_from_inside = true

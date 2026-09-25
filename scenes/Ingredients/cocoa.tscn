@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dtqgaltawjymn"]
+
+[ext_resource type="PackedScene" uid="uid://b84qjw5hgfflg" path="res://scenes/Ingredients/base_ingredient.tscn" id="1_brk0u"]
+[ext_resource type="Texture2D" uid="uid://bbir6ymq8golb" path="res://assets/visuals/particles.png" id="2_nebym"]
+[ext_resource type="AudioStream" uid="uid://dyxds3nxewc5d" path="res://assets/audio/salt_pour.mp3" id="3_nebym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
+size = Vector2(128, 130)
+
+[node name="Cocoa" unique_id=87222405 instance=ExtResource("1_brk0u")]
+ingredient_name = "Cocoa"
+add_quantity = 2.5
+ingredient_pouring_radians = 1.25
+
+[node name="Sprite2D" parent="." index="0" unique_id=1392852514]
+modulate = Color(0.5172463, 0.27748752, 0.023420712, 1)
+
+[node name="Collision" parent="." index="1" unique_id=139424697]
+shape = SubResource("RectangleShape2D_gee14")
+
+[node name="PourParticles" parent="." index="2" unique_id=355776253]
+texture = ExtResource("2_nebym")
+scale_amount_min = 0.01
+scale_amount_max = 0.02
+color = Color(0.52156866, 0.26666668, 0.12941177, 1)
+
+[node name="PourCast" parent="." index="3" unique_id=798074953]
+rotation = -1.2217305
+
+[node name="PourSound" parent="." index="5" unique_id=1676984529]
+stream = ExtResource("3_nebym")
+pitch_scale = 0.8

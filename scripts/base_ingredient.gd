@@ -4,6 +4,7 @@ signal clicked
 @onready var pour_cast: RayCast2D = $PourCast
 @onready var cooldown: Timer = $Cooldown
 @onready var pour_sound: AudioStreamPlayer2D = $PourSound
+@onready var pour_particles: CPUParticles2D = $PourParticles
 
 @export_subgroup("Configuration")
 @export var ingredient_name : String = "Unknown" #Used to determine what's added to the cup
@@ -17,17 +18,13 @@ var in_tip_zone : bool = false
 var current_hold_offset : Vector2 = Vector2.ZERO
 
 func pour() -> void:
-	if !cooldown.is_stopped(): return
+	if !cooldown.is_stopped(): return # Nice little cooldown
 	cooldown.start()
+	pour_particles.emitting = true
 	SignalHub.emit_add_ingredient(ingredient_name,add_quantity)
 	
-	if pour_sound.stream:
+	if pour_sound.stream: # If there is a sound to play, play
 		pour_sound.play()
-
-
-func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		clicked.emit(self)
 
 func rotate_to_target_radian(target_radian : float) -> void:
 	global_rotation += rotation_step if global_rotation < target_radian else -rotation_step
@@ -35,6 +32,10 @@ func rotate_to_target_radian(target_radian : float) -> void:
 		global_rotation = target_radian
 
 #region Drag Physics
+
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		clicked.emit(self)
 
 func _physics_process(_delta) -> void:
 	if !held: return

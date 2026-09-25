@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://d20agtqda16r6"]
 
 [ext_resource type="Script" uid="uid://d1f843ey1svfb" path="res://scripts/game.gd" id="1_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://icon.svg" id="2_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://tpe65j26vyje" path="res://scenes/Ingredients/test_ingredient1.tscn" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://v0lweanbyfld" path="res://scenes/shelf.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://ckdex6j13iw30" path="res://scenes/cup.tscn" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://16ra2pqyflx" path="res://scenes/Ingredients/milk.tscn" id="5_u5sy4"]
+[ext_resource type="AudioStream" uid="uid://b42xqq2edyoik" path="res://assets/audio/Cozy fall jam song.mp3" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://dtqgaltawjymn" path="res://scenes/Ingredients/cocoa.tscn" id="6_u5sy4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xrivr"]
 
 [node name="game" type="Node2D" unique_id=2122610920]
-position = Vector2(-43, 91)
 script = ExtResource("1_lnu2h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=130225076]
@@ -48,23 +49,25 @@ shape = SubResource("WorldBoundaryShape2D_xrivr")
 
 [node name="Shelf" parent="Kitchen" unique_id=420292646 instance=ExtResource("5_iywne")]
 position = Vector2(-303, -70)
+scale = Vector2(1.4, 1.4)
+
+[node name="BenchSprite" type="Sprite2D" parent="Kitchen" unique_id=656175375]
+modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
+position = Vector2(-6.1035156e-05, 474)
+scale = Vector2(14.281249, 2.265625)
+texture = ExtResource("2_lbhrr")
 
 [node name="Cup" parent="Kitchen" unique_id=664389584 instance=ExtResource("5_p57ef")]
 position = Vector2(364, 220)
 
 [node name="Ingredients" type="Node2D" parent="Kitchen" unique_id=1849979381]
 
-[node name="TestIngredient1" parent="Kitchen/Ingredients" unique_id=87222405 instance=ExtResource("2_yqjtg")]
-position = Vector2(-446, -186)
+[node name="Milk" parent="Kitchen/Ingredients" unique_id=87222405 instance=ExtResource("5_u5sy4")]
+position = Vector2(-468, -239)
 
-[node name="TestIngredient2" parent="Kitchen/Ingredients" unique_id=582164281 instance=ExtResource("2_yqjtg")]
-position = Vector2(-286, -188)
+[node name="Cocoa" parent="Kitchen/Ingredients" unique_id=130094175 instance=ExtResource("6_u5sy4")]
+position = Vector2(-162, -155)
 
-[node name="TestIngredient3" parent="Kitchen/Ingredients" unique_id=308905303 instance=ExtResource("2_yqjtg")]
-position = Vector2(-133, -189)
-
-[node name="Sprite2D" type="Sprite2D" parent="Kitchen" unique_id=656175375]
-modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
-position = Vector2(-6.1035156e-05, 474)
-scale = Vector2(14.281249, 2.265625)
-texture = ExtResource("2_lbhrr")
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1916866419]
+stream = ExtResource("6_p57ef")
+autoplay = true

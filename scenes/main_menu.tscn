@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://cufwexgl1tkk3"]
+
+[ext_resource type="Script" uid="uid://c0w507mqclbk0" path="res://scripts/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://klyal30mso67" path="res://assets/visuals/blank-wood-sign-md.png" id="2_fu7sn"]
+[ext_resource type="FontFile" uid="uid://df4fr6dl8m6n2" path="res://assets/Fraunces/static/Fraunces_72pt-Bold.ttf" id="3_fu7sn"]
+[ext_resource type="FontFile" uid="uid://cg6brwkktratb" path="res://assets/Fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" id="4_jix8l"]
+
+[node name="MainMenu" type="Control" unique_id=2128036664]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vrkn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=762445574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5865425, 0.28073403, 2.8878452e-07, 1)
+
+[node name="Start" type="TextureButton" parent="." unique_id=1874012137]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 253.0
+offset_right = 433.0
+offset_bottom = 553.0
+scale = Vector2(0.55298394, 0.5669732)
+pivot_offset = Vector2(150, 150)
+texture_normal = ExtResource("2_fu7sn")
+flip_h = true
+
+[node name="Label" type="Label" parent="Start" unique_id=1016190032]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.5219855
+offset_top = -29.902666
+offset_right = 3.5219727
+offset_bottom = -29.90268
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 60
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="." unique_id=972483762]
+layout_mode = 0
+offset_left = 714.00006
+offset_top = 254.00003
+offset_right = 1024.9451
+offset_bottom = 569.7927
+scale = Vector2(0.55298394, 0.5669732)
+pivot_offset = Vector2(150, 150)
+texture_normal = ExtResource("2_fu7sn")
+
+[node name="Label" type="Label" parent="Quit" unique_id=1784367486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.753517
+offset_top = -45.77649
+offset_right = -12.7535095
+offset_bottom = -45.77649
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fu7sn")
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=912847213]
+layout_mode = 0
+offset_top = 484.0
+offset_right = 1152.0
+offset_bottom = 654.0
+color = Color(0.33758768, 0.64359343, 0.33594954, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1483785966]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8736062, 0.77526945, 0.388399, 1)
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 120
+text = "ROOT CAFE"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="Start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

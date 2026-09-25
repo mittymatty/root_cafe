@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ckdex6j13iw30"]
 
 [ext_resource type="Script" uid="uid://bf87u6n472t7j" path="res://scripts/cup.gd" id="1_7q2t1"]
-[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://icon.svg" id="1_vafus"]
+[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="1_vafus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vafus"]
 size = Vector2(80, 128)
@@ -10,7 +10,7 @@ size = Vector2(80, 128)
 size = Vector2(111, 136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn6n"]
-size = Vector2(80, 148)
+size = Vector2(90.58855, 148)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkhl5"]
 radius = 9.333332
@@ -61,7 +61,8 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TippingZone" unique_id=223623259]
-position = Vector2(0, -142.66667)
+position = Vector2(0, -142.66664)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_ssn6n")
 debug_color = Color(0.70961446, 3.3691526e-07, 0.37117797, 0.41960785)
 
@@ -84,6 +85,13 @@ position = Vector2(-1.4566126e-13, -65.333336)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_yaijh")
 debug_color = Color(2.382472e-06, 0.6478593, 0.20786527, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=897616987]
+offset_left = -68.0
+offset_top = -159.0
+offset_right = 68.0
+offset_bottom = -132.0
+show_percentage = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="TippingZone" to="." method="_on_tipping_zone_body_entered"]

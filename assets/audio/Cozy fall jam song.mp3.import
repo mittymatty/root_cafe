@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b42xqq2edyoik"
+path="res://.godot/imported/Cozy fall jam song.mp3-ee032e5856ac06473d826a1ffb85e40c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Cozy fall jam song.mp3"
+dest_files=["res://.godot/imported/Cozy fall jam song.mp3-ee032e5856ac06473d826a1ffb85e40c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

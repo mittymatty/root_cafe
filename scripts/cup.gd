@@ -1,11 +1,13 @@
 class_name Cup extends RigidBody2D
-@onready var tipping_zone: Area2D = $TippingZone
 signal clicked
+
+@onready var tipping_zone: Area2D = $TippingZone
+@onready var progress_bar: ProgressBar = $ProgressBar
+
 var current_ingredient_pouring : Ingredient = null
-var held : bool = false
 var current_hold_offset : Vector2 = Vector2.ZERO
 
-
+var held : bool = false
 
 func _on_tipping_zone_body_entered(body: Node2D) -> void:
 	if !body is Ingredient: return
@@ -15,15 +17,26 @@ func _on_tipping_zone_body_entered(body: Node2D) -> void:
 func _on_tipping_zone_body_exited(body: Node2D) -> void:
 	if !body is Ingredient: return
 	if body == current_ingredient_pouring:
-		current_ingredient_pouring.in_tip_zone = false
-		current_ingredient_pouring = null
+		clear_pouring_ingedient()
 
-#region Drag Physics
+func clear_pouring_ingedient() -> void:
+	current_ingredient_pouring.in_tip_zone = false
+	current_ingredient_pouring = null
+
+func update_progress_bar () -> void:
+	progress_bar.value = CupContents.capacity
 
 func _physics_process(_delta: float) -> void:
-	#print(current_ingredient_pouring)
+	if current_ingredient_pouring and !current_ingredient_pouring.held:
+		clear_pouring_ingedient()
+	
 	if !held: return
 	global_transform.origin = get_global_mouse_position() + current_hold_offset
+
+func _ready() -> void:
+	SignalHub.cup_capacity_changed.connect(update_progress_bar)
+
+#region Drag Physics
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
