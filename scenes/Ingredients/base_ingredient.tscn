@@ -24,4 +24,10 @@ collision_mask = 16
 collide_with_areas = true
 collide_with_bodies = false
 
+[node name="Cooldown" type="Timer" parent="." unique_id=366229566]
+wait_time = 0.5
+one_shot = true
+
+[node name="PourSound" type="AudioStreamPlayer2D" parent="." unique_id=1676984529]
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]

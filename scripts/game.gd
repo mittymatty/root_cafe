@@ -7,7 +7,6 @@ func _ready():
 		node.clicked.connect(on_pickable_clicked)
 
 func on_pickable_clicked(object):
-	print(object)
 	if held_ingredient: return
 	object.pickup()
 	held_ingredient = object

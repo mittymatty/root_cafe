@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://tpe65j26vyje"]
 
 [ext_resource type="PackedScene" uid="uid://b84qjw5hgfflg" path="res://scenes/Ingredients/base_ingredient.tscn" id="1_awr7g"]
-[ext_resource type="Script" uid="uid://ot8wyrot5cyh" path="res://scenes/Ingredients/test_ingredient_1.gd" id="2_qfugs"]
+[ext_resource type="Script" uid="uid://ot8wyrot5cyh" path="res://scripts/test_ingredient_1.gd" id="2_qfugs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0pjbo"]
 radius = 63.63961
@@ -11,7 +11,10 @@ size = Vector2(128, 64)
 
 [node name="TestIngredient1" unique_id=87222405 instance=ExtResource("1_awr7g")]
 script = ExtResource("2_qfugs")
+ingredient_name = "TestSubstance"
+add_quantity = 7.5
 ingredient_pouring_radians = 1.75
+rotation_step = 0.04
 
 [node name="Sprite2D" parent="." index="0" unique_id=1392852514]
 modulate = Color(1, 0.34901962, 1, 1)

@@ -2,18 +2,28 @@ class_name Ingredient extends RigidBody2D
 signal clicked
 
 @onready var pour_cast: RayCast2D = $PourCast
+@onready var cooldown: Timer = $Cooldown
+@onready var pour_sound: AudioStreamPlayer2D = $PourSound
 
 @export_subgroup("Configuration")
+@export var ingredient_name : String = "Unknown" #Used to determine what's added to the cup
+@export var add_quantity : float = 5.0 #How much of the cup's capacity (of 100) each drop will fill
 @export var ingredient_weight : float = 20.0 #When thrown, the ingedient's velocity will be divided by this
 @export var ingredient_pouring_radians : float = 1.0 #The angle the ingredient will begin pouring its contents at while held.
+@export var rotation_step : float = 0.05
 
 var held : bool = false
 var in_tip_zone : bool = false
 var current_hold_offset : Vector2 = Vector2.ZERO
-var rotation_step : float = 0.05
 
 func pour() -> void:
-	print("pouring") #Override this later
+	if !cooldown.is_stopped(): return
+	cooldown.start()
+	SignalHub.emit_add_ingredient(ingredient_name,add_quantity)
+	
+	if pour_sound.stream:
+		pour_sound.play()
+
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
