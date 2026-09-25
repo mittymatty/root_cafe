@@ -8,9 +8,14 @@ size = Vector2(128, 128)
 
 [node name="TestIngredient1" unique_id=87222405 instance=ExtResource("1_awr7g")]
 script = ExtResource("2_qfugs")
+ingredient_pouring_radians = 1.75
 
 [node name="Sprite2D" parent="." index="0" unique_id=1392852514]
 modulate = Color(1, 0.34901962, 1, 1)
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=139424697]
 shape = SubResource("RectangleShape2D_em5jb")
+
+[node name="PourCast" parent="." index="2" unique_id=798074953]
+target_position = Vector2(109.5, -31.75)
+hit_from_inside = true

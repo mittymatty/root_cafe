@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ckdex6j13iw30"]
 
+[ext_resource type="Script" uid="uid://bf87u6n472t7j" path="res://scripts/cup.gd" id="1_7q2t1"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://icon.svg" id="1_vafus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
@@ -8,9 +9,18 @@ size = Vector2(80, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
 size = Vector2(39, 59)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1lj4"]
+size = Vector2(80, 148)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7f2x3"]
+radius = 9.333332
+height = 68.0
+
 [node name="Cup" type="StaticBody2D" unique_id=664389584]
 scale = Vector2(1.5, 1.5)
 collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_7q2t1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=395095008]
 position = Vector2(-36, -24)
@@ -32,9 +42,31 @@ texture = ExtResource("1_vafus")
 scale = Vector2(0.625, 1)
 texture = ExtResource("1_vafus")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=347727921]
+[node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=347727921]
 shape = SubResource("RectangleShape2D_xrivr")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1523785716]
+[node name="HandleCollision" type="CollisionShape2D" parent="." unique_id=1523785716]
 position = Vector2(-58, -1)
 shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="TippingZone" type="Area2D" parent="." unique_id=649246334]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TippingZone" unique_id=75868846]
+position = Vector2(0, -142.66667)
+shape = SubResource("RectangleShape2D_b1lj4")
+debug_color = Color(0.70961446, 3.3691526e-07, 0.37117797, 0.41960785)
+
+[node name="Receiver" type="Area2D" parent="." unique_id=333444175]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Receiver" unique_id=1856876332]
+position = Vector2(0, 50.666668)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7f2x3")
+debug_color = Color(0.6162499, 0.5366143, 0, 0.41960785)
+
+[connection signal="body_entered" from="TippingZone" to="." method="_on_tipping_zone_body_entered"]
+[connection signal="body_exited" from="TippingZone" to="." method="_on_tipping_zone_body_exited"]

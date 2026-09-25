@@ -30,6 +30,7 @@ draggable_ingredients=""
 2d_physics/layer_2="Ingredients"
 2d_physics/layer_3="ActiveIngredient"
 2d_physics/layer_4="Cup"
+2d_physics/layer_5="IngredientReceiver"
 
 [physics]
 

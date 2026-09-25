@@ -16,4 +16,12 @@ texture = ExtResource("2_blv4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=139424697]
 
+[node name="PourCast" type="RayCast2D" parent="." unique_id=798074953]
+position = Vector2(57, -59)
+scale = Vector2(4, 4)
+target_position = Vector2(115.5, -0.75)
+collision_mask = 16
+collide_with_areas = true
+collide_with_bodies = false
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
