@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://d0w28rekvfrvy"]
+
+[ext_resource type="Texture2D" uid="uid://moxccegx1bcx" path="res://Imports/placeholders/Screenshot 2026-09-25 213811.png" id="1_4iit1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ixrs0"]
+
+[node name="Recipe_Book" type="Node" unique_id=2081696281]
+
+[node name="Panel" type="Panel" parent="." unique_id=135518507]
+anchors_preset = -1
+anchor_right = 0.177
+anchor_bottom = 0.18800001
+offset_left = 3.0
+offset_top = -25.0
+offset_right = 249.096
+offset_bottom = 400.176
+
+[node name="Title" type="Label" parent="Panel" unique_id=1073759916]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 37.0
+offset_right = 310.0
+offset_bottom = 60.0
+text = "ROOT CAFE RECIPE BOOK"
+
+[node name="DrinkName" type="Label" parent="Panel" unique_id=479655974]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 112.0
+offset_right = 341.0
+offset_bottom = 138.0
+text = "DRINK NAME: e.g HOT chocolate"
+
+[node name="Ingredients" type="Label" parent="Panel" unique_id=466808852]
+material = SubResource("CanvasItemMaterial_ixrs0")
+layout_mode = 0
+offset_left = 84.0
+offset_top = 150.0
+offset_right = 215.0
+offset_bottom = 277.0
+text = "INGREDNTS
+
+-Milk
+-choclate
+-marshmallows"
+
+[node name="Instructions" type="Label" parent="Panel" unique_id=1997107874]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 324.0
+offset_right = 294.0
+offset_bottom = 425.0
+text = "INSTRUCTIONS
+
+Combine milk + chocolate  
+then add marshmallows. "
+
+[node name="PreviousButton" type="Button" parent="Panel" unique_id=483250673]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 502.0
+offset_right = 285.0
+offset_bottom = 537.0
+text = "<"
+
+[node name="NextButton" type="Button" parent="Panel" unique_id=1084411063]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 502.0
+offset_right = 325.0
+offset_bottom = 537.0
+text = ">"
+
+[node name="CloseButton" type="Button" parent="Panel" unique_id=212987754]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 501.0
+offset_right = 445.0
+offset_bottom = 537.0
+text = "CLOSE"
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=269409220]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 147.0
+offset_right = 390.0
+offset_bottom = 303.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_4iit1")
+expand_mode = 2
+stretch_mode = 3
