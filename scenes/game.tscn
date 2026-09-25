@@ -12,20 +12,21 @@
 script = ExtResource("1_lnu2h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=130225076]
+zoom = Vector2(0.8, 0.8)
 
 [node name="Kitchen" type="Node2D" parent="." unique_id=1954870813]
 
 [node name="Boundaries" type="Node2D" parent="Kitchen" unique_id=115915745]
 
 [node name="BoundaryLeft" type="StaticBody2D" parent="Kitchen/Boundaries" unique_id=2014722202]
-position = Vector2(-579, 0)
+position = Vector2(-721, -1)
 rotation = 1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Boundaries/BoundaryLeft" unique_id=1298629133]
 shape = SubResource("WorldBoundaryShape2D_xrivr")
 
 [node name="BoundaryRight" type="StaticBody2D" parent="Kitchen/Boundaries" unique_id=1002026951]
-position = Vector2(575, 0)
+position = Vector2(729, 0)
 rotation = -1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen/Boundaries/BoundaryRight" unique_id=1199397197]
@@ -51,7 +52,7 @@ position = Vector2(-2, 278)
 position = Vector2(-303, -70)
 
 [node name="Cup" parent="Kitchen" unique_id=664389584 instance=ExtResource("5_p57ef")]
-position = Vector2(324, 133)
+position = Vector2(285, 107)
 
 [node name="Ingredients" type="Node2D" parent="Kitchen" unique_id=1849979381]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dmyylwylpx47d" path="res://scripts/base_ingredient.gd" id="1_f5gp5"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://icon.svg" id="2_blv4x"]
 
-[node name="BaseIngredient" type="RigidBody2D" unique_id=87222405 groups=["draggable_ingredients"]]
+[node name="BaseIngredient" type="RigidBody2D" unique_id=87222405 groups=["draggable"]]
 collision_layer = 2
 collision_mask = 9
 input_pickable = true
@@ -14,7 +14,7 @@ script = ExtResource("1_f5gp5")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1392852514]
 texture = ExtResource("2_blv4x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=139424697]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=139424697]
 
 [node name="PourCast" type="RayCast2D" parent="." unique_id=798074953]
 position = Vector2(57, -59)

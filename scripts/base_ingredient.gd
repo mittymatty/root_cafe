@@ -12,6 +12,9 @@ var in_tip_zone : bool = false
 var current_hold_offset : Vector2 = Vector2.ZERO
 var rotation_step : float = 0.05
 
+func pour() -> void:
+	print("pouring") #Override this later
+
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		clicked.emit(self)
@@ -20,6 +23,8 @@ func rotate_to_target_radian(target_radian : float) -> void:
 	global_rotation += rotation_step if global_rotation < target_radian else -rotation_step
 	if !in_tip_zone and ((global_rotation < rotation_step and global_rotation > target_radian) or (global_rotation > rotation_step and global_rotation < target_radian)):
 		global_rotation = target_radian
+
+#region Drag Physics
 
 func _physics_process(_delta) -> void:
 	if !held: return
@@ -57,5 +62,4 @@ func drop(impulse : Vector2) -> void:
 	lock_rotation = false
 	apply_central_impulse(impulse/ingredient_weight)
 
-func pour() -> void:
-	print("pouring") #Override this later
+#endregion

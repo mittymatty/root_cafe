@@ -3,8 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://b84qjw5hgfflg" path="res://scenes/Ingredients/base_ingredient.tscn" id="1_awr7g"]
 [ext_resource type="Script" uid="uid://ot8wyrot5cyh" path="res://scenes/Ingredients/test_ingredient_1.gd" id="2_qfugs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_em5jb"]
-size = Vector2(128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0pjbo"]
+radius = 63.63961
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(128, 64)
 
 [node name="TestIngredient1" unique_id=87222405 instance=ExtResource("1_awr7g")]
 script = ExtResource("2_qfugs")
@@ -13,9 +16,13 @@ ingredient_pouring_radians = 1.75
 [node name="Sprite2D" parent="." index="0" unique_id=1392852514]
 modulate = Color(1, 0.34901962, 1, 1)
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=139424697]
-shape = SubResource("RectangleShape2D_em5jb")
+[node name="Collision" parent="." index="1" unique_id=139424697]
+shape = SubResource("CircleShape2D_0pjbo")
 
 [node name="PourCast" parent="." index="2" unique_id=798074953]
 target_position = Vector2(109.5, -31.75)
 hit_from_inside = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3" unique_id=468146478]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_xrivr")

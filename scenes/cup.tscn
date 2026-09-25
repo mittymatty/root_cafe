@@ -3,70 +3,88 @@
 [ext_resource type="Script" uid="uid://bf87u6n472t7j" path="res://scripts/cup.gd" id="1_7q2t1"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://icon.svg" id="1_vafus"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vafus"]
 size = Vector2(80, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(39, 59)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q2t1"]
+size = Vector2(111, 136)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1lj4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn6n"]
 size = Vector2(80, 148)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7f2x3"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkhl5"]
 radius = 9.333332
 height = 68.0
 
-[node name="Cup" type="StaticBody2D" unique_id=664389584]
-scale = Vector2(1.5, 1.5)
-collision_layer = 8
-collision_mask = 0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yaijh"]
+radius = 24.0
+height = 77.333336
+
+[node name="Cup" type="RigidBody2D" unique_id=1616143848 groups=["draggable"]]
+input_pickable = true
+lock_rotation = true
+freeze_mode = 1
+continuous_cd = 1
 script = ExtResource("1_7q2t1")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=395095008]
-position = Vector2(-36, -24)
-scale = Vector2(0.625, 0.10656265)
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2047158327]
+position = Vector2(-45.964417, -51.951073)
+scale = Vector2(1.4452119, 0.21359015)
 texture = ExtResource("1_vafus")
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=262678424]
-position = Vector2(-36, 21.000004)
-scale = Vector2(0.625, 0.10656265)
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1357350063]
+position = Vector2(-45.964417, 55.048927)
+scale = Vector2(1.4452119, 0.21359015)
 texture = ExtResource("1_vafus")
 
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=149076982]
-position = Vector2(-72, -0.99999976)
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=922552646]
+position = Vector2(-134.96442, 1.0489273)
 rotation = -1.563854
-scale = Vector2(0.46604836, 0.09009282)
+scale = Vector2(1.0776619, 0.18057866)
 texture = ExtResource("1_vafus")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1710841270]
-scale = Vector2(0.625, 1)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=693624389]
+scale = Vector2(1.1806751, 1.6926152)
 texture = ExtResource("1_vafus")
 
-[node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=347727921]
-shape = SubResource("RectangleShape2D_xrivr")
+[node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=66195188]
+scale = Vector2(1.8890803, 1.6926152)
+shape = SubResource("RectangleShape2D_vafus")
 
-[node name="HandleCollision" type="CollisionShape2D" parent="." unique_id=1523785716]
-position = Vector2(-58, -1)
-shape = SubResource("RectangleShape2D_13qdw")
+[node name="HandleCollision" type="CollisionShape2D" parent="." unique_id=478166617]
+position = Vector2(-89.5, 3)
+shape = SubResource("RectangleShape2D_7q2t1")
 
-[node name="TippingZone" type="Area2D" parent="." unique_id=649246334]
+[node name="TippingZone" type="Area2D" parent="." unique_id=1332421718]
+scale = Vector2(1.8324611, 1.6685561)
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TippingZone" unique_id=75868846]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TippingZone" unique_id=223623259]
 position = Vector2(0, -142.66667)
-shape = SubResource("RectangleShape2D_b1lj4")
+shape = SubResource("RectangleShape2D_ssn6n")
 debug_color = Color(0.70961446, 3.3691526e-07, 0.37117797, 0.41960785)
 
-[node name="Receiver" type="Area2D" parent="." unique_id=333444175]
+[node name="Receiver" type="Area2D" parent="." unique_id=1465154855]
+scale = Vector2(1.8324611, 1.6685561)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Receiver" unique_id=1856876332]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Receiver" unique_id=1129702613]
 position = Vector2(0, 50.666668)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_7f2x3")
+shape = SubResource("CapsuleShape2D_kkhl5")
 debug_color = Color(0.6162499, 0.5366143, 0, 0.41960785)
 
+[node name="LiquidReceiver" type="Area2D" parent="." unique_id=1197847473]
+scale = Vector2(1.8324611, 1.6685561)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LiquidReceiver" unique_id=2044029575]
+position = Vector2(-1.4566126e-13, -65.333336)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yaijh")
+debug_color = Color(2.382472e-06, 0.6478593, 0.20786527, 0.41960785)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="TippingZone" to="." method="_on_tipping_zone_body_entered"]
 [connection signal="body_exited" from="TippingZone" to="." method="_on_tipping_zone_body_exited"]

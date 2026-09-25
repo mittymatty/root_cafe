@@ -1,13 +1,13 @@
 extends Node2D
 
-var held_ingredient : Ingredient = null
+var held_ingredient : RigidBody2D = null
 
 func _ready():
-	for node in get_tree().get_nodes_in_group("draggable_ingredients"):
-		#print(node)
+	for node in get_tree().get_nodes_in_group("draggable"):
 		node.clicked.connect(on_pickable_clicked)
 
 func on_pickable_clicked(object):
+	print(object)
 	if held_ingredient: return
 	object.pickup()
 	held_ingredient = object
