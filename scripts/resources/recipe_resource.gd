@@ -1,5 +1,6 @@
 class_name RecipeData extends Resource
 
+@export var drink_name : String
 @export var customer_dialog_options : Array[String]
 @export var required_ingredients : Dictionary[String,float]
 @export var bonus_scoring_ingedients : Dictionary[String,float]

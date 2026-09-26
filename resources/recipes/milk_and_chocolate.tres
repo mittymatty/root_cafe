@@ -4,9 +4,10 @@
 
 [resource]
 script = ExtResource("1_ajx55")
-customer_dialog_options = Array[String](["I want milk with a dash of cocoa!", "MILK WITH COCOA. NOW"])
+drink_name = "Milk and Cocoa (Test)"
+customer_dialog_options = Array[String](["I want milk with a dash of cocoa!", "MILK WITH COCOA. NOW", "GAHHHH COCOA MILK GAHHHH"])
 required_ingredients = Dictionary[String, float]({
 "Cocoa": 2.0,
-"Milk": 14.0
+"Milk": 20.0
 })
 metadata/_custom_type_script = "uid://cq2l0dchhxpjr"

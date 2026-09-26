@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://om5qkc05n15e"]
 
+[ext_resource type="Texture2D" uid="uid://c0yxcqag3v3ng" path="res://assets/visuals/cozy_wallpaper.jpg" id="1_mwmjw"]
 [ext_resource type="PackedScene" uid="uid://v0lweanbyfld" path="res://scenes/shelf.tscn" id="1_v3ycp"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="2_g3o0j"]
 [ext_resource type="PackedScene" uid="uid://ckdex6j13iw30" path="res://scenes/cup.tscn" id="3_58u3k"]
@@ -12,6 +13,12 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xrivr"]
 
 [node name="Kitchen" type="Node2D" unique_id=1329327937]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1202153087]
+modulate = Color(0.54178685, 0.5417869, 0.54178685, 1)
+z_index = -10
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("1_mwmjw")
 
 [node name="Shelf" parent="." unique_id=420292646 instance=ExtResource("1_v3ycp")]
 position = Vector2(-486.00003, -214)
@@ -82,3 +89,12 @@ position = Vector2(377, 215)
 [node name="Plate" parent="." unique_id=1467762600 instance=ExtResource("7_58u3k")]
 position = Vector2(380.00006, 347)
 scale = Vector2(1.75, 1.75)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1627745646]
+position = Vector2(0, -612)
+color = Color(1, 1, 0.5803922, 1)
+energy = 0.25
+shadow_enabled = true
+shadow_color = Color(0.15487596, 0.154876, 0.15487596, 0)
+height = 0.15
+max_distance = 16.0

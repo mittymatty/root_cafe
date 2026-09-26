@@ -81,6 +81,7 @@ offset_bottom = 126.0
 metadata/_edit_use_anchors_ = true
 
 [node name="BAR" type="Panel" parent="OrderUI" unique_id=1867880780]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.3218563
@@ -149,7 +150,7 @@ offset_bottom = 42.118202
 text = "NEW CUSTOMER"
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="NinePatchRect" parent="OrderUI" unique_id=2018300772]
+[node name="SpeechBubble" type="NinePatchRect" parent="OrderUI" unique_id=2018300772]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.2994012
@@ -161,15 +162,14 @@ offset_bottom = 120.0
 texture = ExtResource("2_8e5hq")
 metadata/_edit_use_anchors_ = true
 
-[node name="DialogueText" type="Label" parent="OrderUI/Panel" unique_id=810386445]
-visible = false
+[node name="DialogueText" type="Label" parent="OrderUI/SpeechBubble" unique_id=810386445]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.17155753
-anchor_top = -0.08383234
-anchor_right = 1.7196808
-anchor_bottom = 1.4314218
+anchor_left = -0.10363163
+anchor_top = -0.17767385
+anchor_right = 1.561187
+anchor_bottom = 1.6503854
 offset_left = 112.999985
 offset_top = 178.0
 offset_right = -112.99997
