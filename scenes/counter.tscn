@@ -10,9 +10,11 @@ script = ExtResource("1_sc7mx")
 [node name="Panel" type="Panel" parent="OrderUI" unique_id=614338701]
 anchors_preset = -1
 anchor_right = 0.6171875
-anchor_bottom = 0.08179013
-offset_right = 444.0
-offset_bottom = 67.0
+anchor_bottom = 0.10030864
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 445.0
+offset_bottom = 66.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Customer id" type="Label" parent="OrderUI/Panel" unique_id=1622527810]
@@ -65,10 +67,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Takeorder" type="Button" parent="OrderUI/Panel" unique_id=957387061]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.92010915
-anchor_top = 0.72980005
-anchor_right = 0.92010915
-anchor_bottom = 0.72980005
+anchor_left = 0.9036589
+anchor_top = 0.67980003
+anchor_right = 0.9279014
+anchor_bottom = 0.7131334
 offset_left = -47.726013
 offset_top = -15.576004
 offset_right = 47.273987
@@ -76,4 +78,18 @@ offset_bottom = 15.423996
 text = "Take Order"
 metadata/_edit_use_anchors_ = true
 
+[node name="placeholder" type="Button" parent="OrderUI/Panel" unique_id=1474978485]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.814
+anchor_right = 0.039
+anchor_bottom = 0.814
+offset_left = -35.045002
+offset_top = -18.447998
+offset_right = 34.954998
+offset_bottom = 18.552002
+text = "NEW CUSTOMER"
+
 [connection signal="pressed" from="OrderUI/Panel/Takeorder" to="." method="_on_takeorder_pressed"]
+[connection signal="pressed" from="OrderUI/Panel/placeholder" to="." method="_on_placeholder_pressed"]
