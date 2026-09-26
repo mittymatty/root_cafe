@@ -32,6 +32,7 @@ position = Vector2(-468, -239)
 position = Vector2(-162, -155)
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=277833931]
+scale = Vector2(1.0800009, 1.3599999)
 
 [node name="BoundaryLeft" type="StaticBody2D" parent="Boundaries" unique_id=1074703388]
 position = Vector2(-721, -1)

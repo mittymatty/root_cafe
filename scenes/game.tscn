@@ -10,12 +10,15 @@
 script = ExtResource("1_lnu2h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=130225076]
-zoom = Vector2(0.8, 0.8)
+position = Vector2(575, 322)
 
 [node name="Kitchen" parent="." unique_id=1329327937 instance=ExtResource("2_lnu2h")]
+position = Vector2(570, 341)
+scale = Vector2(0.75, 0.75)
 
 [node name="Counter" parent="." unique_id=150447696 instance=ExtResource("3_lbhrr")]
 visible = false
+position = Vector2(214, -128)
 script = null
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1916866419]

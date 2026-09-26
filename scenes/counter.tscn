@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://c4043vf66imgo"]
 
-[ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scenes/counter.gd" id="1_sc7mx"]
+[ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scripts/counter.gd" id="1_sc7mx"]
 [ext_resource type="Texture2D" uid="uid://3yqnkqm87n7i" path="res://Imports/placeholders/image-removebg-preview (21).png" id="2_8e5hq"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="3_laq1u"]
-[ext_resource type="Texture2D" uid="uid://cv67gjn5c5wkj" path="res://assets/visuals/images-3.png" id="4_4m7qv"]
 
 [node name="Counter" type="Node2D" unique_id=150447696]
-position = Vector2(220, -119)
 script = ExtResource("1_sc7mx")
 
 [node name="PLACEHOLDER FOR ANIMALS" type="Sprite2D" parent="." unique_id=1919656232]
