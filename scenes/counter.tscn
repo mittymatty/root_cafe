@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4043vf66imgo"]
 
-[ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scenes/counter.gd" id="1_sc7mx"]
+[ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scripts/counter.gd" id="1_sc7mx"]
 [ext_resource type="Texture2D" uid="uid://cv67gjn5c5wkj" path="res://assets/visuals/images-3.png" id="2_8e5hq"]
 
 [node name="Counter" type="Node2D" unique_id=150447696]

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dabbpipk7uxvh"]
+
+[ext_resource type="Script" uid="uid://ds37fvtw7r5xx" path="res://scenes/game_ui.gd" id="1_rns2u"]
+[ext_resource type="FontFile" uid="uid://c4cjkj1o28lbn" path="res://assets/Fraunces/static/Fraunces_72pt_SuperSoft-BoldItalic.ttf" id="1_yubou"]
+
+[node name="GameUI" type="CanvasLayer" unique_id=697466090]
+script = ExtResource("1_rns2u")
+
+[node name="InKitchen" type="Control" parent="." unique_id=836354453]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="InKitchen" unique_id=116504001]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_right = 199.0
+grow_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="ReturnToCounter" type="Button" parent="InKitchen/MarginContainer" unique_id=1964971793]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yubou")
+text = "Return to Counter"
+
+[node name="AtCounter" type="Control" parent="." unique_id=210117453]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="AtCounter" unique_id=554059603]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_right = 199.0
+grow_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="EnterKitchen" type="Button" parent="AtCounter/MarginContainer" unique_id=1657961829]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_yubou")
+text = "Enter the Kitchen"
+
+[connection signal="pressed" from="InKitchen/MarginContainer/ReturnToCounter" to="." method="_on_return_to_counter_pressed"]
+[connection signal="pressed" from="AtCounter/MarginContainer/EnterKitchen" to="." method="_on_enter_kitchen_pressed"]
