@@ -22,8 +22,8 @@ var customers = [
 ]
 
 func _ready() -> void:
-	$OrderUI/Panel/Takeorder.text = "Take order"
-	$OrderUI/Panel/placeholder.disabled = true
+	$OrderUI/BAR/Takeorder.text = "Take order"
+	$OrderUI/BAR/placeholder.disabled = true
 	update_order()
 	
 func update_order():
@@ -34,10 +34,10 @@ func update_order():
 	
 func _on_takeorder_pressed() -> void:
 	ordertaken = true
-	$OrderUI/Panel/Takeorder.text = "Order taken!\n\n ✓ Active order"
-	$OrderUI/Panel/Takeorder.disabled = true
+	$OrderUI/BAR/Takeorder.text = "Order taken!\n\n ✓ Active order"
+	$OrderUI/BAR/Takeorder.disabled = true
 	
-	$OrderUI/Panel/placeholder.disabled = false
+	$OrderUI/BAR/placeholder.disabled = false
 
 func _on_placeholder_pressed() -> void:
 	var previous_customer = current_customer
@@ -46,9 +46,9 @@ func _on_placeholder_pressed() -> void:
 		current_customer = randi_range(0, customers.size() - 1)
 	
 	ordertaken = false
-	$OrderUI/Panel/Takeorder.text = "Take order"
-	$OrderUI/Panel/Takeorder.disabled = false
+	$OrderUI/BAR/Takeorder.text = "Take order"
+	$OrderUI/BAR/Takeorder.disabled = false
 	
-	$OrderUI/Panel/placeholder.disabled = true
+	$OrderUI/BAR/placeholder.disabled = true
 	
 	update_order()
