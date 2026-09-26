@@ -7,20 +7,17 @@ var customers = [
 	{
 		"id": "Kiwi",
 		"drink": "Hot Chocolate",
-		"cup": "Cup Holder Necklace",
-		"dialogue": "I'm feeling a bit chilly, I'd like a chocolatey one today please!"
+		"dialogue": "I'm feeling a bit chilly,\n I'd like a chocolatey one today please!"
 	},
 	{
 		"id": "Fennec Fox",
 		"drink": "cocoa",
-		"cup": "Mug",
-		"dialogue": "Just a standard cocoa for me, thanks."
+		"dialogue": "Just the usual.\n cocoa for me, thanks."
 	},
 	{
 		"id": "Mole",
 		"drink": "Coffee",
-		"cup": "Travel cup",
-		"dialogue": "Need something to keep me awake on the go. Dark and strong."
+		"dialogue": "Need something to keep me awake on the go.\n Dark and strong."
 	}
 ]
 
@@ -31,7 +28,8 @@ func _ready() -> void:
 	
 func update_order():
 	var customer = customers[current_customer]
-	
+	$"OrderUI/BAR/Customer id".text = customer["id"]
+	$"OrderUI/BAR/Order text".text = customer["drink"]
 	$"OrderUI/Panel/DialogueText".text = customer["dialogue"]
 	
 func _on_takeorder_pressed() -> void:
