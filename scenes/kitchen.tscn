@@ -14,11 +14,11 @@
 [node name="Kitchen" type="Node2D" unique_id=1329327937]
 
 [node name="Shelf" parent="." unique_id=420292646 instance=ExtResource("1_v3ycp")]
-position = Vector2(-486, -143)
+position = Vector2(-486.00003, -214)
 scale = Vector2(1.2, 1.2)
 
 [node name="Shelf2" parent="." unique_id=1752431349 instance=ExtResource("1_v3ycp")]
-position = Vector2(-486, 72)
+position = Vector2(-486, -20)
 scale = Vector2(1.2, 1.2)
 
 [node name="BenchSprite" type="Sprite2D" parent="." unique_id=580116325]
@@ -39,11 +39,11 @@ position = Vector2(54, 211)
 collision_mask = 9
 
 [node name="Milk" parent="Ingredients" unique_id=72242948 instance=ExtResource("4_ibrlr")]
-position = Vector2(-655, -297)
+position = Vector2(-655, 188)
 collision_mask = 9
 
 [node name="Cocoa" parent="Ingredients" unique_id=959415135 instance=ExtResource("5_mwmjw")]
-position = Vector2(-626, -19)
+position = Vector2(-612, -109)
 collision_mask = 9
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=277833931]

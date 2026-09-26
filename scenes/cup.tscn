@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="1_vafus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vafus"]
-size = Vector2(80, 128)
+size = Vector2(57.17068, 90.983475)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7q2t1"]
-size = Vector2(111, 136)
+size = Vector2(55, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn6n"]
-size = Vector2(90.58855, 148)
+size = Vector2(90.58855, 103.33836)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkhl5"]
 radius = 9.333332
@@ -29,23 +29,26 @@ freeze_mode = 1
 continuous_cd = 1
 script = ExtResource("1_7q2t1")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2047158327]
+[node name="Visuals" type="Node2D" parent="." unique_id=831048373]
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Visuals" unique_id=2047158327]
 position = Vector2(-45.964417, -51.951073)
 scale = Vector2(1.4452119, 0.21359015)
 texture = ExtResource("1_vafus")
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1357350063]
+[node name="Sprite2D3" type="Sprite2D" parent="Visuals" unique_id=1357350063]
 position = Vector2(-45.964417, 55.048927)
 scale = Vector2(1.4452119, 0.21359015)
 texture = ExtResource("1_vafus")
 
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=922552646]
+[node name="Sprite2D4" type="Sprite2D" parent="Visuals" unique_id=922552646]
 position = Vector2(-134.96442, 1.0489273)
 rotation = -1.563854
 scale = Vector2(1.0776619, 0.18057866)
 texture = ExtResource("1_vafus")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=693624389]
+[node name="Sprite2D" type="Sprite2D" parent="Visuals" unique_id=693624389]
 scale = Vector2(1.1806751, 1.6926152)
 texture = ExtResource("1_vafus")
 
@@ -54,22 +57,24 @@ scale = Vector2(1.8890803, 1.6926152)
 shape = SubResource("RectangleShape2D_vafus")
 
 [node name="HandleCollision" type="CollisionShape2D" parent="." unique_id=478166617]
-position = Vector2(-89.5, 3)
+position = Vector2(-74.5, 0.5)
 shape = SubResource("RectangleShape2D_7q2t1")
 
 [node name="TippingZone" type="Area2D" parent="." unique_id=1332421718]
-scale = Vector2(1.8324611, 1.6685561)
+position = Vector2(0, 38.999996)
+scale = Vector2(1.3924624, 1.6685561)
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TippingZone" unique_id=223623259]
-position = Vector2(0, -142.66664)
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(0, -120.3358)
+scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_ssn6n")
 debug_color = Color(0.70961446, 3.3691526e-07, 0.37117797, 0.41960785)
 
 [node name="Receiver" type="Area2D" parent="." unique_id=1465154855]
-scale = Vector2(1.8324611, 1.6685561)
+position = Vector2(0, -23.999998)
+scale = Vector2(1.5124621, 1.6685561)
 collision_layer = 16
 collision_mask = 0
 
@@ -80,7 +85,7 @@ shape = SubResource("CapsuleShape2D_kkhl5")
 debug_color = Color(0.6162499, 0.5366143, 0, 0.41960785)
 
 [node name="LiquidReceiver" type="Area2D" parent="." unique_id=1197847473]
-scale = Vector2(1.8324611, 1.6685561)
+scale = Vector2(1.4324591, 1.1085563)
 collision_layer = 32
 collision_mask = 0
 
@@ -92,9 +97,9 @@ debug_color = Color(2.382472e-06, 0.6478593, 0.20786527, 0.41960785)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=897616987]
 offset_left = -68.0
-offset_top = -159.0
+offset_top = -125.0
 offset_right = 68.0
-offset_bottom = -132.0
+offset_bottom = -98.0
 show_percentage = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

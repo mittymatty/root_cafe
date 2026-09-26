@@ -19,6 +19,7 @@ config/icon="res://assets/visuals/icon.svg"
 
 SignalHub="*uid://b8pg0jfwkjx6k"
 CupContents="*uid://cgjb3s8iye1kk"
+PlayerStatus="*uid://cquj0ilnbdj7k"
 
 [display]
 

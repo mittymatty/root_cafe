@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dabbpipk7uxvh"]
 
 [ext_resource type="Script" uid="uid://ds37fvtw7r5xx" path="res://scripts/game_ui.gd" id="1_rns2u"]
-[ext_resource type="FontFile" uid="uid://c4cjkj1o28lbn" path="res://assets/Fraunces/static/Fraunces_72pt_SuperSoft-BoldItalic.ttf" id="1_yubou"]
+[ext_resource type="FontFile" uid="uid://c4cjkj1o28lbn" path="res://assets/imports/Fraunces/static/Fraunces_72pt_SuperSoft-BoldItalic.ttf" id="1_yubou"]
 
 [node name="GameUI" type="CanvasLayer" unique_id=697466090]
 script = ExtResource("1_rns2u")

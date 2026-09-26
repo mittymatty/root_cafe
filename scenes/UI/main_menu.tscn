@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c0w507mqclbk0" path="res://scripts/main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://klyal30mso67" path="res://assets/visuals/blank-wood-sign-md.png" id="2_fu7sn"]
-[ext_resource type="FontFile" uid="uid://df4fr6dl8m6n2" path="res://assets/Fraunces/static/Fraunces_72pt-Bold.ttf" id="3_fu7sn"]
-[ext_resource type="FontFile" uid="uid://cg6brwkktratb" path="res://assets/Fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" id="4_jix8l"]
+[ext_resource type="FontFile" uid="uid://df4fr6dl8m6n2" path="res://assets/imports/Fraunces/static/Fraunces_72pt-Bold.ttf" id="3_fu7sn"]
+[ext_resource type="FontFile" uid="uid://cg6brwkktratb" path="res://assets/imports/Fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" id="4_jix8l"]
 
 [node name="MainMenu" type="Control" unique_id=2128036664]
 layout_mode = 3
