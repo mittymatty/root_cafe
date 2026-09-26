@@ -1,3 +1,74 @@
 [gd_scene format=3 uid="uid://c4043vf66imgo"]
 
 [node name="Counter" type="Node2D" unique_id=150447696]
+
+[node name="OrderUI" type="Node" parent="." unique_id=598296305]
+
+[node name="Panel" type="Panel" parent="OrderUI" unique_id=614338701]
+anchors_preset = -1
+anchor_right = 0.6171875
+anchor_bottom = 0.08179013
+offset_right = 444.0
+offset_bottom = 67.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Customer name" type="Label" parent="OrderUI/Panel" unique_id=1622527810]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.157
+anchor_top = 0.321
+anchor_right = 0.157
+anchor_bottom = 0.321
+offset_left = -50.335007
+offset_top = -24.52
+offset_right = 49.664993
+offset_bottom = 24.480003
+text = "Customer:
+Kiwi"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Order text" type="Label" parent="OrderUI/Panel" unique_id=27455118]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.437
+anchor_top = 0.321
+anchor_right = 0.437
+anchor_bottom = 0.321
+offset_left = -53.735016
+offset_top = -24.52
+offset_right = 54.264984
+offset_bottom = 24.480003
+text = "Drink:
+Hot chocolate"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Cup text" type="Label" parent="OrderUI/Panel" unique_id=245910886]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6938961
+anchor_top = 0.3459334
+anchor_right = 0.71189624
+anchor_bottom = 0.35
+offset_left = -9.450012
+offset_top = -11.512009
+offset_right = 16.345947
+offset_bottom = 11.0
+text = "CUP"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Takeorder" type="Button" parent="OrderUI/Panel" unique_id=957387061]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.92010915
+anchor_top = 0.72980005
+anchor_right = 0.92010915
+anchor_bottom = 0.72980005
+offset_left = -47.726013
+offset_top = -15.576004
+offset_right = 47.273987
+offset_bottom = 15.423996
+text = "Take Order"
+metadata/_edit_use_anchors_ = true
