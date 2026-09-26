@@ -29,6 +29,7 @@ var current_customer = 0
 func _ready() -> void:
 	$OrderUI/Panel/Takeorder.text = "Take order"
 	update_order()
+	$OrderUI/Panel/placeholder.disabled = true
 	
 func update_order():
 	var customer = customers[current_customer]
