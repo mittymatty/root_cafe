@@ -1,10 +1,5 @@
 [gd_scene format=3 uid="uid://cstk6ftr455j1"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_7vrkn"]
-[ext_resource type="Texture2D" path="res://blank-wood-sign-md.png" id="2_fu7sn"]
-[ext_resource type="FontFile" path="res://Fraunces/static/Fraunces_72pt-Bold.ttf" id="3_fu7sn"]
-[ext_resource type="FontFile" path="res://Fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" id="4_jix8l"]
-
 [node name="MainMenu" type="Control" unique_id=2128036664]
 layout_mode = 3
 anchors_preset = 15
@@ -12,7 +7,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7vrkn")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=762445574]
 layout_mode = 1
@@ -31,7 +25,6 @@ offset_right = 433.0
 offset_bottom = 553.0
 scale = Vector2(0.55298394, 0.5669732)
 pivot_offset = Vector2(150, 150)
-texture_normal = ExtResource("2_fu7sn")
 flip_h = true
 
 [node name="Label" type="Label" parent="Start" unique_id=1016190032]
@@ -46,7 +39,6 @@ offset_bottom = -29.90268
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_fu7sn")
 theme_override_font_sizes/font_size = 60
 text = "Start"
 horizontal_alignment = 1
@@ -60,7 +52,6 @@ offset_right = 1024.9451
 offset_bottom = 569.7927
 scale = Vector2(0.55298394, 0.5669732)
 pivot_offset = Vector2(150, 150)
-texture_normal = ExtResource("2_fu7sn")
 
 [node name="Label" type="Label" parent="Quit" unique_id=1784367486]
 layout_mode = 1
@@ -74,7 +65,6 @@ offset_bottom = -45.77649
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_fu7sn")
 theme_override_font_sizes/font_size = 60
 text = "Quit"
 horizontal_alignment = 1
@@ -94,7 +84,6 @@ anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.8736062, 0.77526945, 0.388399, 1)
-theme_override_fonts/font = ExtResource("4_jix8l")
 theme_override_font_sizes/font_size = 120
 text = "ROOT CAFE"
 horizontal_alignment = 1

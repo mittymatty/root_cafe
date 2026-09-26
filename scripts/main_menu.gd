@@ -27,7 +27,7 @@ func _on_start_mouse_exited():
 	start_tween.tween_property($Start, "scale", start_base_scale, 0.2)
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://counter_scene.tscn") 
+	get_tree().change_scene_to_file("res://scenes/counter.tscn") 
 
 func _on_quit_mouse_entered():
 	if quit_tween:

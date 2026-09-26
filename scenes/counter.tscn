@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4043vf66imgo"]
 
 [ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scenes/counter.gd" id="1_sc7mx"]
+[ext_resource type="Texture2D" uid="uid://cv67gjn5c5wkj" path="res://assets/visuals/images-3.png" id="2_8e5hq"]
 
 [node name="Counter" type="Node2D" unique_id=150447696]
 script = ExtResource("1_sc7mx")
@@ -13,62 +14,16 @@ offset_top = -2.0
 offset_right = 671.0
 offset_bottom = 126.0
 
-[node name="Panel" type="Panel" parent="OrderUI" unique_id=614338701]
+[node name="Panel" type="NinePatchRect" parent="OrderUI" unique_id=2018300772]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0014970074
 anchor_top = 0.0390625
-anchor_right = 1.5374252
-anchor_bottom = 0.6640625
+anchor_right = 0.86077845
+anchor_bottom = 3.734375
 offset_right = 120.0
 offset_bottom = 120.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Customer id" type="Label" parent="OrderUI/Panel" unique_id=1622527810]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.19448441
-anchor_top = 0.31948388
-anchor_right = 0.19448441
-anchor_bottom = 0.31948385
-offset_left = -50.335007
-offset_top = -24.52
-offset_right = 49.664993
-offset_bottom = 24.480003
-text = "Customer:
-Kiwi"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Order text" type="Label" parent="OrderUI/Panel" unique_id=27455118]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.50710315
-anchor_top = 0.3323871
-anchor_right = 0.50710315
-anchor_bottom = 0.3323871
-offset_left = -53.735016
-offset_top = -24.52
-offset_right = 54.264984
-offset_bottom = 24.480003
-text = "Drink:
-Hot chocolate"
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Cup text" type="Label" parent="OrderUI/Panel" unique_id=245910886]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.6938961
-anchor_top = 0.3459334
-anchor_right = 0.71189624
-anchor_bottom = 0.35
-offset_left = -9.450012
-offset_top = -11.512009
-offset_right = 16.345947
-offset_bottom = 11.0
-text = "CUP"
-horizontal_alignment = 1
+texture = ExtResource("2_8e5hq")
 metadata/_edit_use_anchors_ = true
 
 [node name="Takeorder" type="Button" parent="OrderUI/Panel" unique_id=957387061]
@@ -97,6 +52,24 @@ offset_top = -18.51001
 offset_right = 68.30001
 offset_bottom = 18.48999
 text = "NEW CUSTOMER"
+
+[node name="DialogueText" type="Label" parent="OrderUI/Panel" unique_id=810386445]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 113.0
+offset_top = 178.0
+offset_right = -113.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="OrderUI/Panel/Takeorder" to="." method="_on_takeorder_pressed"]
 [connection signal="pressed" from="OrderUI/Panel/placeholder" to="." method="_on_placeholder_pressed"]

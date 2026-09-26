@@ -1,55 +1,56 @@
 extends Node2D
 
-var customer_id = "Kiwi"
-var drink = "Hot Chocolate"
-var cup = "cup holder necklace"
-
 var ordertaken = false 
+var current_customer = 0
 
 var customers = [
 	{
 		"id": "Kiwi",
 		"drink": "Hot Chocolate",
-		"cup": "Cup Holder Necklace"
+		"cup": "Cup Holder Necklace",
+		"dialogue": "I'm feeling a bit chilly, I'd like a chocolatey one today please!"
 	},
 	{
 		"id": "Fennec Fox",
 		"drink": "cocoa",
-		"cup": "Mug"
+		"cup": "Mug",
+		"dialogue": "Just a standard cocoa for me, thanks."
 	},
 	{
 		"id": "Mole",
 		"drink": "Coffee",
-		"cup": "Travel cup"
-	},
+		"cup": "Travel cup",
+		"dialogue": "Need something to keep me awake on the go. Dark and strong."
+	}
 ]
-
-var current_customer = 0
 
 func _ready() -> void:
 	$OrderUI/Panel/Takeorder.text = "Take order"
-	update_order()
 	$OrderUI/Panel/placeholder.disabled = true
+	update_order()
 	
 func update_order():
 	var customer = customers[current_customer]
-	$"OrderUI/Panel/Customer id".text = "Customer:\n"+ customer["id"]
-	$"OrderUI/Panel/Order text".text = "Drink:\n" + customer["drink"]
-	$"OrderUI/Panel/Cup text".text = "Cup:\n"+ customer["cup"]
 	
-
+	$"OrderUI/Panel/DialogueText".text = customer["dialogue"]
+	
 func _on_takeorder_pressed() -> void:
 	ordertaken = true
-	$OrderUI/Panel/Takeorder.text = "Order taken!"
+	$OrderUI/Panel/Takeorder.text = "Order taken!\n\n ✓ Active order"
 	$OrderUI/Panel/Takeorder.disabled = true
-	$OrderUI/Panel/Takeorder.text += "\n\n ✓ Active order"
+	
+	$OrderUI/Panel/placeholder.disabled = false
 
 func _on_placeholder_pressed() -> void:
-	current_customer += 1
-	if current_customer >= customers.size():
-		current_customer = 0
+	var previous_customer = current_customer
+	
+	while current_customer == previous_customer:
+		current_customer = randi_range(0, customers.size() - 1)
+	
 	ordertaken = false
 	$OrderUI/Panel/Takeorder.text = "Take order"
 	$OrderUI/Panel/Takeorder.disabled = false
-
+	
+	$OrderUI/Panel/placeholder.disabled = true
+	
 	update_order()
