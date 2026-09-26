@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://d1f843ey1svfb" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://om5qkc05n15e" path="res://scenes/kitchen.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c4043vf66imgo" path="res://scenes/counter.tscn" id="3_lbhrr"]
-[ext_resource type="AudioStream" uid="uid://b42xqq2edyoik" path="res://assets/audio/Cozy fall jam song.mp3" id="6_p57ef"]
+[ext_resource type="AudioStream" uid="uid://b3te3jfumngns" path="res://assets/audio/Cozy fall jam song Final .mp3" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://dabbpipk7uxvh" path="res://scenes/game_ui.tscn" id="5_iywne"]
 
 [node name="game" type="Node2D" unique_id=2122610920]
 script = ExtResource("1_lnu2h")
@@ -18,5 +19,10 @@ visible = false
 script = null
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1916866419]
-stream = ExtResource("6_p57ef")
+stream = ExtResource("4_iywne")
+volume_db = -10.0
 autoplay = true
+
+[node name="GameUI" parent="." unique_id=697466090 node_paths=PackedStringArray("kitchen", "counter") instance=ExtResource("5_iywne")]
+kitchen = NodePath("../Kitchen")
+counter = NodePath("../Counter")
