@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c4043vf66imgo"]
 
+[ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scenes/counter.gd" id="1_sc7mx"]
+
 [node name="Counter" type="Node2D" unique_id=150447696]
+script = ExtResource("1_sc7mx")
 
 [node name="OrderUI" type="Node" parent="." unique_id=598296305]
 
@@ -12,7 +15,7 @@ offset_right = 444.0
 offset_bottom = 67.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Customer name" type="Label" parent="OrderUI/Panel" unique_id=1622527810]
+[node name="Customer id" type="Label" parent="OrderUI/Panel" unique_id=1622527810]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.157
@@ -72,3 +75,5 @@ offset_right = 47.273987
 offset_bottom = 15.423996
 text = "Take Order"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="OrderUI/Panel/Takeorder" to="." method="_on_takeorder_pressed"]
