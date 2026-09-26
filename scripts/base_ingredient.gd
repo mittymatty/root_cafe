@@ -12,18 +12,21 @@ signal clicked
 @export var ingredient_weight : float = 20.0 #When thrown, the ingedient's velocity will be divided by this
 @export var ingredient_pouring_radians : float = 1.0 #The angle the ingredient will begin pouring its contents at while held.
 @export var rotation_step : float = 0.05
+#@export var rogue_pouring : bool = false # Does it pour even when it's just been left on its side?
 
 var held : bool = false
 var in_tip_zone : bool = false
 var current_hold_offset : Vector2 = Vector2.ZERO
 
-func pour() -> void:
+func pour(is_into_cup : bool) -> void:
 	if !cooldown.is_stopped(): return # Nice little cooldown
 	cooldown.start()
 	pour_particles.emitting = true
-	SignalHub.emit_add_ingredient(ingredient_name,add_quantity)
 	
-	if pour_sound.stream: # If there is a sound to play, play
+	if is_into_cup:
+		SignalHub.emit_add_ingredient(ingredient_name,add_quantity)
+	
+	if pour_sound.stream and !pour_sound.playing: # If there is a sound to play, play
 		pour_sound.play()
 
 func rotate_to_target_radian(target_radian : float) -> void:
@@ -43,7 +46,7 @@ func _physics_process(_delta) -> void:
 	global_transform.origin = get_global_mouse_position() + current_hold_offset
 	
 	if in_tip_zone and pour_cast.is_colliding():
-		pour()
+		pour(true)
 	
 	if !is_zero_approx(global_rotation) and !in_tip_zone: #Reset to upright if not in place where we want to tip ingredients.
 		rotate_to_target_radian(0.0)
@@ -57,6 +60,9 @@ func pickup() -> void:
 	set_collision_layer_value(2,false)
 	set_collision_layer_value(3,true)
 	
+	z_index += 5
+	pour_particles.z_index -= 5
+	
 	current_hold_offset = global_transform.origin - get_global_mouse_position()
 	freeze = true
 	held = true
@@ -67,6 +73,9 @@ func drop(impulse : Vector2) -> void:
 	#Switch to the layer "Ingredient" so cup can't detect it.
 	set_collision_layer_value(2,true)
 	set_collision_layer_value(3,false)
+	
+	z_index -= 5
+	pour_particles.z_index += 5
 	
 	freeze = false
 	held = false

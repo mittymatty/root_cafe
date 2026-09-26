@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx072af47r3ll"
-path="res://.godot/imported/drop.svg-0ef2f07ccdad1f25764042a881e062d0.ctex"
+uid="uid://cmw2qc1ek1i70"
+path="res://.godot/imported/smoke_03.png-86c8cfcfc04eb3da072d2fba1c631b20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visuals/drop.svg"
-dest_files=["res://.godot/imported/drop.svg-0ef2f07ccdad1f25764042a881e062d0.ctex"]
+source_file="res://assets/visuals/particles/smoke_03.png"
+dest_files=["res://.godot/imported/smoke_03.png-86c8cfcfc04eb3da072d2fba1c631b20.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

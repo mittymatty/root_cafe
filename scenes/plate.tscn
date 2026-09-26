@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://db0gjwknslf7x"]
+
+[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="1_u60wi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hy6xw"]
+radius = 6.0
+height = 176.0
+
+[node name="Plate" type="StaticBody2D" unique_id=1467762600]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2059406518]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hy6xw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1205932430]
+modulate = Color(4.6817894, 4.6817894, 4.6817894, 1)
+scale = Vector2(1.1199986, 0.08000024)
+texture = ExtResource("1_u60wi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1869389533]
+modulate = Color(4.6817894, 4.6817894, 4.6817894, 1)
+position = Vector2(0, -1.9399925)
+scale = Vector2(1.3999991, 0.06343762)
+texture = ExtResource("1_u60wi")

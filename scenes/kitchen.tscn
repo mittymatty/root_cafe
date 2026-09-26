@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://v0lweanbyfld" path="res://scenes/shelf.tscn" id="1_v3ycp"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="2_g3o0j"]
 [ext_resource type="PackedScene" uid="uid://ckdex6j13iw30" path="res://scenes/cup.tscn" id="3_58u3k"]
+[ext_resource type="PackedScene" uid="uid://fp4yoajc8tg" path="res://scenes/Ingredients/water_jug.tscn" id="4_g3o0j"]
 [ext_resource type="PackedScene" uid="uid://16ra2pqyflx" path="res://scenes/Ingredients/milk.tscn" id="4_ibrlr"]
 [ext_resource type="PackedScene" uid="uid://dtqgaltawjymn" path="res://scenes/Ingredients/cocoa.tscn" id="5_mwmjw"]
+[ext_resource type="PackedScene" uid="uid://db0gjwknslf7x" path="res://scenes/plate.tscn" id="7_58u3k"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xrivr"]
 
@@ -21,11 +23,14 @@ scale = Vector2(14.281249, 2.265625)
 texture = ExtResource("2_g3o0j")
 
 [node name="Cup" parent="." unique_id=1616143848 instance=ExtResource("3_58u3k")]
-position = Vector2(364, 220)
+position = Vector2(547, 215)
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=1619325474]
 
-[node name="Milk" parent="Ingredients" unique_id=87222405 instance=ExtResource("4_ibrlr")]
+[node name="WaterJug" parent="Ingredients" unique_id=87222405 instance=ExtResource("4_g3o0j")]
+position = Vector2(-466, 193)
+
+[node name="Milk" parent="Ingredients" unique_id=72242948 instance=ExtResource("4_ibrlr")]
 position = Vector2(-468, -239)
 
 [node name="Cocoa" parent="Ingredients" unique_id=959415135 instance=ExtResource("5_mwmjw")]
@@ -56,7 +61,11 @@ rotation = -3.1415925
 shape = SubResource("WorldBoundaryShape2D_xrivr")
 
 [node name="BoundaryBottom" type="StaticBody2D" parent="Boundaries" unique_id=919878956]
-position = Vector2(-6.1035156e-05, 332.99997)
+position = Vector2(-8.6736174e-19, 259.55884)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/BoundaryBottom" unique_id=129591335]
 shape = SubResource("WorldBoundaryShape2D_xrivr")
+
+[node name="Plate" parent="." unique_id=1467762600 instance=ExtResource("7_58u3k")]
+position = Vector2(550.00006, 347)
+scale = Vector2(1.75, 1.75)

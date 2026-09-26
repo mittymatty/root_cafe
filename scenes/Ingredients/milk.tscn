@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://16ra2pqyflx"]
 
 [ext_resource type="PackedScene" uid="uid://b84qjw5hgfflg" path="res://scenes/Ingredients/base_ingredient.tscn" id="1_dwpy4"]
-[ext_resource type="Texture2D" uid="uid://dx072af47r3ll" path="res://assets/visuals/drop.svg" id="2_vwell"]
+[ext_resource type="Texture2D" uid="uid://dx072af47r3ll" path="res://assets/visuals/particles/drop.svg" id="2_vwell"]
 [ext_resource type="AudioStream" uid="uid://dd760a6fn4er3" path="res://assets/audio/liquid_quick_pour.mp3" id="3_mbqg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blv4x"]
@@ -28,7 +28,7 @@ color = Color(18.892157, 18.892157, 18.892157, 1)
 
 [node name="PourCast" parent="." index="3" unique_id=798074953]
 position = Vector2(59, -129)
-rotation = -0.87266463
+rotation = -1.0471976
 
 [node name="PourSound" parent="." index="5" unique_id=1676984529]
 stream = ExtResource("3_mbqg0")

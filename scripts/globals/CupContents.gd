@@ -17,11 +17,10 @@ func on_ingredient_added(ingredient_name : String, quantity : float) -> void:
 	var max_add = quantity if capacity + quantity <= max_capacity else max_capacity - capacity
 	capacity += max_add
 	
-	print(contents)
-	
 	if contents.has(ingredient_name):
 		contents[ingredient_name] += max_add
 	else:
 		contents[ingredient_name] = max_add
 	
+	print(contents)
 	SignalHub.emit_cup_capacity_changed()

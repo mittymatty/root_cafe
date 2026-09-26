@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtqgaltawjymn"]
 
 [ext_resource type="PackedScene" uid="uid://b84qjw5hgfflg" path="res://scenes/Ingredients/base_ingredient.tscn" id="1_brk0u"]
-[ext_resource type="Texture2D" uid="uid://bbir6ymq8golb" path="res://assets/visuals/particles.png" id="2_nebym"]
+[ext_resource type="Texture2D" uid="uid://bbir6ymq8golb" path="res://assets/visuals/particles/particles.png" id="2_nebym"]
 [ext_resource type="AudioStream" uid="uid://dyxds3nxewc5d" path="res://assets/audio/salt_pour.mp3" id="3_nebym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
