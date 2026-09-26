@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scripts/counter.gd" id="1_sc7mx"]
 [ext_resource type="Texture2D" uid="uid://3yqnkqm87n7i" path="res://Imports/placeholders/image-removebg-preview (21).png" id="2_8e5hq"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="3_laq1u"]
+[ext_resource type="FontFile" uid="uid://bi4hd3w54dmas" path="res://assets/imports/Fraunces/static/Fraunces_72pt-SemiBold.ttf" id="4_yttel"]
 
 [sub_resource type="Animation" id="Animation_laq1u"]
 length = 0.001
@@ -178,11 +179,12 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_yttel")
+theme_override_font_sizes/font_size = 50
 text = "DIALOGUE"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="BenchSprite" type="Sprite2D" parent="." unique_id=1572339535]
