@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://sckt56ao6srq"]
+
+[ext_resource type="Script" uid="uid://cq2l0dchhxpjr" path="res://scripts/resources/recipe_resource.gd" id="1_ajx55"]
+
+[resource]
+script = ExtResource("1_ajx55")
+customer_dialog_options = Array[String](["I want milk with a dash of cocoa!", "MILK WITH COCOA. NOW"])
+required_ingredients = Dictionary[String, float]({
+"Cocoa": 2.0,
+"Milk": 14.0
+})
+metadata/_custom_type_script = "uid://cq2l0dchhxpjr"

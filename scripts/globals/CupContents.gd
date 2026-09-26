@@ -1,9 +1,10 @@
 extends Node
 
-var contents : Dictionary = {}
+var contents : Dictionary[String,float] = {}
 
 var max_capacity : float = 100.0
 var capacity : float = 0.0
+var min_submit_capacity : float = 70.0
 
 func _ready() -> void:
 	SignalHub.add_ingredient.connect(on_ingredient_added)

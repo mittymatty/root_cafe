@@ -10,6 +10,27 @@
 
 [node name="Kitchen" type="Node2D" unique_id=1329327937]
 
+[node name="Shelf" parent="." unique_id=420292646 instance=ExtResource("1_v3ycp")]
+position = Vector2(-303, -70)
+scale = Vector2(1.4, 1.4)
+
+[node name="BenchSprite" type="Sprite2D" parent="." unique_id=580116325]
+modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
+position = Vector2(-6.1035156e-05, 474)
+scale = Vector2(14.281249, 2.265625)
+texture = ExtResource("2_g3o0j")
+
+[node name="Cup" parent="." unique_id=1616143848 instance=ExtResource("3_58u3k")]
+position = Vector2(364, 220)
+
+[node name="Ingredients" type="Node2D" parent="." unique_id=1619325474]
+
+[node name="Milk" parent="Ingredients" unique_id=87222405 instance=ExtResource("4_ibrlr")]
+position = Vector2(-468, -239)
+
+[node name="Cocoa" parent="Ingredients" unique_id=959415135 instance=ExtResource("5_mwmjw")]
+position = Vector2(-162, -155)
+
 [node name="Boundaries" type="Node2D" parent="." unique_id=277833931]
 
 [node name="BoundaryLeft" type="StaticBody2D" parent="Boundaries" unique_id=1074703388]
@@ -38,24 +59,3 @@ position = Vector2(-6.1035156e-05, 332.99997)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/BoundaryBottom" unique_id=129591335]
 shape = SubResource("WorldBoundaryShape2D_xrivr")
-
-[node name="Shelf" parent="." unique_id=420292646 instance=ExtResource("1_v3ycp")]
-position = Vector2(-303, -70)
-scale = Vector2(1.4, 1.4)
-
-[node name="BenchSprite" type="Sprite2D" parent="." unique_id=580116325]
-modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
-position = Vector2(-6.1035156e-05, 474)
-scale = Vector2(14.281249, 2.265625)
-texture = ExtResource("2_g3o0j")
-
-[node name="Cup" parent="." unique_id=1616143848 instance=ExtResource("3_58u3k")]
-position = Vector2(364, 220)
-
-[node name="Ingredients" type="Node2D" parent="." unique_id=1619325474]
-
-[node name="Milk" parent="Ingredients" unique_id=87222405 instance=ExtResource("4_ibrlr")]
-position = Vector2(-468, -239)
-
-[node name="Cocoa" parent="Ingredients" unique_id=959415135 instance=ExtResource("5_mwmjw")]
-position = Vector2(-162, -155)

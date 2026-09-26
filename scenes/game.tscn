@@ -15,6 +15,7 @@ zoom = Vector2(0.8, 0.8)
 
 [node name="Counter" parent="." unique_id=150447696 instance=ExtResource("3_lbhrr")]
 visible = false
+script = null
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1916866419]
 stream = ExtResource("6_p57ef")

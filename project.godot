@@ -25,6 +25,15 @@ CupContents="*uid://cgjb3s8iye1kk"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "purple",
+"res://resources/": "orange",
+"res://scenes/": "teal",
+"res://scripts/": "yellow"
+}
+
 [global_group]
 
 draggable=""
