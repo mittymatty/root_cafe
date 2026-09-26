@@ -19,7 +19,9 @@ scale = Vector2(0.75, 0.75)
 [node name="Counter" parent="." unique_id=150447696 instance=ExtResource("3_lbhrr")]
 visible = false
 position = Vector2(214, -128)
-script = null
+
+[node name="DialogueText" parent="Counter/OrderUI/Panel" parent_id_path=PackedInt32Array(150447696, 2018300772) index="0" unique_id=810386445]
+visible = true
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1916866419]
 stream = ExtResource("4_iywne")
@@ -29,3 +31,7 @@ autoplay = true
 [node name="GameUI" parent="." unique_id=697466090 node_paths=PackedStringArray("kitchen", "counter") instance=ExtResource("5_iywne")]
 kitchen = NodePath("../Kitchen")
 counter = NodePath("../Counter")
+
+[connection signal="pressed" from="Counter/OrderUI/BAR/placeholder" to="." method="_on_placeholder_pressed"]
+
+[editable path="Counter"]

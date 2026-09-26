@@ -21,3 +21,7 @@ func _unhandled_input(event):
 
 func get_has_mouse_released (event) -> bool:
 	return event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and !event.pressed
+
+
+func _on_placeholder_pressed() -> void:
+	pass # Replace with function body.

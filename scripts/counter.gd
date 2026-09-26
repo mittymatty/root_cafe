@@ -31,6 +31,7 @@ func update_order():
 	$"OrderUI/BAR/Customer id".text = customer["id"]
 	$"OrderUI/BAR/Order text".text = customer["drink"]
 	$"OrderUI/Panel/DialogueText".text = customer["dialogue"]
+	print("Updated dialogue to: ", customer["dialogue"])
 	
 func _on_takeorder_pressed() -> void:
 	ordertaken = true
