@@ -7,7 +7,6 @@
 script = ExtResource("1_rns2u")
 
 [node name="InKitchen" type="Control" parent="." unique_id=836354453]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,7 +36,28 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_yubou")
 text = "Return to Counter"
 
+[node name="MarginContainer2" type="MarginContainer" parent="InKitchen" unique_id=1964832777]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.5
+offset_right = 85.5
+offset_bottom = 119.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 50
+
+[node name="ServeDrink" type="Button" parent="InKitchen/MarginContainer2" unique_id=781814171]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7505542, 0.9671027, 0, 1)
+theme_override_fonts/font = ExtResource("1_yubou")
+text = "Serve Drink?"
+
 [node name="AtCounter" type="Control" parent="." unique_id=210117453]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,4 +88,5 @@ theme_override_fonts/font = ExtResource("1_yubou")
 text = "Enter the Kitchen"
 
 [connection signal="pressed" from="InKitchen/MarginContainer/ReturnToCounter" to="." method="_on_return_to_counter_pressed"]
+[connection signal="pressed" from="InKitchen/MarginContainer2/ServeDrink" to="." method="_on_serve_drink_pressed"]
 [connection signal="pressed" from="AtCounter/MarginContainer/EnterKitchen" to="." method="_on_enter_kitchen_pressed"]

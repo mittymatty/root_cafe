@@ -21,6 +21,8 @@ radius = 24.0
 height = 77.333336
 
 [node name="Cup" type="RigidBody2D" unique_id=1616143848 groups=["draggable"]]
+collision_layer = 8
+collision_priority = 2.0
 input_pickable = true
 lock_rotation = true
 freeze_mode = 1

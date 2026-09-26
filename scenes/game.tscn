@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://om5qkc05n15e" path="res://scenes/kitchen.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c4043vf66imgo" path="res://scenes/counter.tscn" id="3_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://b3te3jfumngns" path="res://assets/audio/Cozy fall jam song Final .mp3" id="4_iywne"]
-[ext_resource type="PackedScene" uid="uid://dabbpipk7uxvh" path="res://scenes/game_ui.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://dabbpipk7uxvh" path="res://scenes/UI/game_ui.tscn" id="5_iywne"]
 
 [node name="game" type="Node2D" unique_id=2122610920]
 script = ExtResource("1_lnu2h")

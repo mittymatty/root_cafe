@@ -44,7 +44,7 @@ position = Vector2(-0.17736053, 26.749695)
 
 [node name="PourSound" parent="." index="6" unique_id=1258661896]
 stream = ExtResource("4_dqsbs")
-pitch_scale = 0.9
+pitch_scale = 0.7
 
 [node name="BeginPourSound" parent="." index="7" unique_id=1657715594]
 stream = ExtResource("5_3y50c")

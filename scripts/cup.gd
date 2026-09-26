@@ -44,12 +44,14 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 func pickup() -> void:
 	if held: return
+	z_index += 5
 	current_hold_offset = global_transform.origin - get_global_mouse_position()
 	freeze = true
 	held = true
 
 func drop(impulse : Vector2) -> void:
 	if !held: return 
+	z_index -= 5
 	freeze = false
 	held = false
 	apply_central_impulse(impulse/100)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4uexbachl3h3"]
 
-[ext_resource type="Script" uid="uid://dnfitacdeujbp" path="res://scenes/Dispensers/base_dispenser.gd" id="1_jru46"]
+[ext_resource type="Script" uid="uid://dnfitacdeujbp" path="res://scripts/base_dispenser.gd" id="1_jru46"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="1_quged"]
 
 [node name="BaseDispenser" type="StaticBody2D" unique_id=433683602]
