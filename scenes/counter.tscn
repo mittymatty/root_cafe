@@ -4,14 +4,73 @@
 [ext_resource type="Texture2D" uid="uid://3yqnkqm87n7i" path="res://Imports/placeholders/image-removebg-preview (21).png" id="2_8e5hq"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="3_laq1u"]
 
+[sub_resource type="Animation" id="Animation_laq1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PLACEHOLDER FOR ANIMALS:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-404, 507.00006)]
+}
+
+[sub_resource type="Animation" id="Animation_yttel"]
+resource_name = "Walk_in"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PLACEHOLDER FOR ANIMALS:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-404, 507.00006), Vector2(-263, 553.00006), Vector2(-42, 514.00006), Vector2(260, 582), Vector2(407.99997, 496.00006)]
+}
+
+[sub_resource type="Animation" id="Animation_skrdt"]
+resource_name = "Walk_out"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PLACEHOLDER FOR ANIMALS:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.39999998, 0.5999999, 0.79999995, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(408, 496.00006), Vector2(559, 560), Vector2(789, 541.00006), Vector2(945, 591), Vector2(1140, 538.00006), Vector2(1383, 570)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_skrdt"]
+_data = {
+&"RESET": SubResource("Animation_laq1u"),
+&"Walk_in": SubResource("Animation_yttel"),
+&"Walk_out": SubResource("Animation_skrdt")
+}
+
 [node name="Counter" type="Node2D" unique_id=150447696]
 script = ExtResource("1_sc7mx")
 
 [node name="PLACEHOLDER FOR ANIMALS" type="Sprite2D" parent="." unique_id=1919656232]
 modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
-position = Vector2(333, 556.00006)
+position = Vector2(-404, 507.00006)
 scale = Vector2(3.051989, 4.5723267)
 texture = ExtResource("3_laq1u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PLACEHOLDER FOR ANIMALS" unique_id=2127684276]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_skrdt")
+autoplay = &"Walk_in"
 
 [node name="OrderUI" type="Control" parent="." unique_id=770026107]
 layout_mode = 3
