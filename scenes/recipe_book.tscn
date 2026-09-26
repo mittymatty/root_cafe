@@ -1,92 +1,99 @@
 [gd_scene format=3 uid="uid://d0w28rekvfrvy"]
 
 [ext_resource type="Texture2D" uid="uid://moxccegx1bcx" path="res://assets/imports/placeholders/Screenshot 2026-09-25 213811.png" id="1_4iit1"]
+[ext_resource type="Script" uid="uid://01aqthdc12oh" path="res://scenes/recipe_book.gd" id="1_jfus2"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ixrs0"]
 
-[node name="Recipe_Book" type="Node" unique_id=2081696281]
+[node name="Recipe_Book" type="Control" unique_id=1033390037]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jfus2")
 
 [node name="Panel" type="Panel" parent="." unique_id=135518507]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.177
 anchor_bottom = 0.18800001
 offset_left = 3.0
 offset_top = -25.0
-offset_right = 249.096
-offset_bottom = 400.176
+offset_right = 593.0
+offset_bottom = 655.0
 
-[node name="Title" type="Label" parent="Panel" unique_id=1073759916]
-layout_mode = 0
-offset_left = 115.0
-offset_top = 37.0
-offset_right = 310.0
-offset_bottom = 60.0
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1226812196]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.5
+offset_top = -159.5
+offset_right = 59.5
+offset_bottom = 161.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1225848549]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1073759916]
+layout_mode = 2
 text = "ROOT CAFE RECIPE BOOK"
 
-[node name="DrinkName" type="Label" parent="Panel" unique_id=479655974]
-layout_mode = 0
-offset_left = 92.0
-offset_top = 112.0
-offset_right = 341.0
-offset_bottom = 138.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=567853941]
+layout_mode = 2
+
+[node name="LeftColumn" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=642451115]
+layout_mode = 2
+
+[node name="DrinkName" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/LeftColumn" unique_id=479655974]
+layout_mode = 2
 text = "DRINK NAME: e.g HOT chocolate"
 
-[node name="Ingredients" type="Label" parent="Panel" unique_id=466808852]
+[node name="Ingredients" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/LeftColumn" unique_id=466808852]
 material = SubResource("CanvasItemMaterial_ixrs0")
-layout_mode = 0
-offset_left = 84.0
-offset_top = 150.0
-offset_right = 215.0
-offset_bottom = 277.0
+layout_mode = 2
 text = "INGREDNTS
 
 -Milk
 -choclate
 -marshmallows"
 
-[node name="Instructions" type="Label" parent="Panel" unique_id=1997107874]
-layout_mode = 0
-offset_left = 86.0
-offset_top = 324.0
-offset_right = 294.0
-offset_bottom = 425.0
+[node name="Instructions" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/LeftColumn" unique_id=1997107874]
+layout_mode = 2
 text = "INSTRUCTIONS
 
 Combine milk + chocolate  
 then add marshmallows. "
 
-[node name="PreviousButton" type="Button" parent="Panel" unique_id=483250673]
-layout_mode = 0
-offset_left = 248.0
-offset_top = 502.0
-offset_right = 285.0
-offset_bottom = 537.0
-text = "<"
+[node name="RightColumn" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=178850536]
+layout_mode = 2
 
-[node name="NextButton" type="Button" parent="Panel" unique_id=1084411063]
-layout_mode = 0
-offset_left = 288.0
-offset_top = 502.0
-offset_right = 325.0
-offset_bottom = 537.0
-text = ">"
-
-[node name="CloseButton" type="Button" parent="Panel" unique_id=212987754]
-layout_mode = 0
-offset_left = 333.0
-offset_top = 501.0
-offset_right = 445.0
-offset_bottom = 537.0
-text = "CLOSE"
-
-[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=269409220]
-layout_mode = 0
-offset_left = 232.0
-offset_top = 147.0
-offset_right = 390.0
-offset_bottom = 303.0
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/RightColumn" unique_id=269409220]
+layout_mode = 2
 offset_transform_enabled = true
+offset_transform_position = Vector2(30, 70)
 offset_transform_scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_4iit1")
 expand_mode = 2
 stretch_mode = 3
+
+[node name="Controls" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=924167301]
+layout_mode = 2
+
+[node name="PreviousButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/Controls" unique_id=483250673]
+layout_mode = 2
+text = "<"
+
+[node name="NextButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/Controls" unique_id=1084411063]
+layout_mode = 2
+text = ">"
+
+[node name="CloseButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/Controls" unique_id=212987754]
+layout_mode = 2
+text = "CLOSE"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Controls/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Controls/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Controls/CloseButton" to="." method="_on_close_button_pressed"]
