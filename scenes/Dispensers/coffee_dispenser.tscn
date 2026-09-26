@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://d10f1st02tqm5"]
+
+[ext_resource type="PackedScene" uid="uid://c4uexbachl3h3" path="res://scenes/Dispensers/base_dispenser.tscn" id="1_5bfmq"]
+[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="2_yee4s"]
+[ext_resource type="Texture2D" uid="uid://iin6a3rwov1a" path="res://assets/visuals/particles/greyish_drop.svg" id="3_dqsbs"]
+[ext_resource type="AudioStream" uid="uid://bnc1chuq1txur" path="res://assets/audio/water_pouring.mp3" id="4_dqsbs"]
+[ext_resource type="AudioStream" uid="uid://cms7gk2n53g5x" path="res://assets/audio/steam_hiss.mp3" id="5_3y50c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibrlr"]
+radius = 86.70064
+
+[node name="CoffeeDispenser" unique_id=433683602 instance=ExtResource("1_5bfmq")]
+z_index = -2
+ingredient_name = "Coffee"
+add_quantity = 10.0
+
+[node name="Sprite2D3" type="Sprite2D" parent="." index="0" unique_id=594006407]
+modulate = Color(0.16253604, 0.16253604, 0.16253604, 1)
+position = Vector2(0.17733762, 183.93036)
+scale = Vector2(1.3077708, 3.0301619)
+texture = ExtResource("2_yee4s")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." index="1" unique_id=1603767445]
+position = Vector2(0.17733765, 365.93036)
+scale = Vector2(1.6277709, 0.27016193)
+texture = ExtResource("2_yee4s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="2" unique_id=1090534874]
+modulate = Color(0.16253604, 0.16253604, 0.16253604, 1)
+position = Vector2(-0.40000153, 52)
+scale = Vector2(0.39999998, 1)
+texture = ExtResource("2_yee4s")
+
+[node name="PourParticles" parent="." index="3" unique_id=797734758]
+z_index = 0
+texture = ExtResource("3_dqsbs")
+lifetime = 0.5
+scale_amount_min = 0.1
+scale_amount_max = 0.15
+color = Color(0.1853799, 0.12223353, 0.056156002, 1)
+
+[node name="PourCast" parent="." index="4" unique_id=972469928]
+position = Vector2(-0.17736053, 26.749695)
+
+[node name="PourSound" parent="." index="6" unique_id=1258661896]
+stream = ExtResource("4_dqsbs")
+pitch_scale = 0.9
+
+[node name="BeginPourSound" parent="." index="7" unique_id=1657715594]
+stream = ExtResource("5_3y50c")
+
+[node name="Sprite2D" parent="." index="8" unique_id=1073361181]
+position = Vector2(-0.39997864, -40.68004)
+scale = Vector2(1.4000003, 1.8799994)
+
+[node name="Collision" parent="." index="9" unique_id=1275846824]
+position = Vector2(0, -40)
+shape = SubResource("CircleShape2D_ibrlr")

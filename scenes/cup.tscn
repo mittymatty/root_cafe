@@ -79,6 +79,8 @@ debug_color = Color(0.6162499, 0.5366143, 0, 0.41960785)
 
 [node name="LiquidReceiver" type="Area2D" parent="." unique_id=1197847473]
 scale = Vector2(1.8324611, 1.6685561)
+collision_layer = 32
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LiquidReceiver" unique_id=2044029575]
 position = Vector2(-1.4566126e-13, -65.333336)

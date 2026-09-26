@@ -12,7 +12,6 @@ signal clicked
 @export var ingredient_weight : float = 20.0 #When thrown, the ingedient's velocity will be divided by this
 @export var ingredient_pouring_radians : float = 1.0 #The angle the ingredient will begin pouring its contents at while held.
 @export var rotation_step : float = 0.05
-#@export var rogue_pouring : bool = false # Does it pour even when it's just been left on its side?
 
 var held : bool = false
 var in_tip_zone : bool = false

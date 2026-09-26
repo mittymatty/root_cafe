@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckdex6j13iw30" path="res://scenes/cup.tscn" id="3_58u3k"]
 [ext_resource type="PackedScene" uid="uid://fp4yoajc8tg" path="res://scenes/Ingredients/water_jug.tscn" id="4_g3o0j"]
 [ext_resource type="PackedScene" uid="uid://16ra2pqyflx" path="res://scenes/Ingredients/milk.tscn" id="4_ibrlr"]
+[ext_resource type="PackedScene" uid="uid://d10f1st02tqm5" path="res://scenes/Dispensers/coffee_dispenser.tscn" id="4_mwmjw"]
 [ext_resource type="PackedScene" uid="uid://dtqgaltawjymn" path="res://scenes/Ingredients/cocoa.tscn" id="5_mwmjw"]
 [ext_resource type="PackedScene" uid="uid://db0gjwknslf7x" path="res://scenes/plate.tscn" id="7_58u3k"]
 
@@ -24,6 +25,11 @@ texture = ExtResource("2_g3o0j")
 
 [node name="Cup" parent="." unique_id=1616143848 instance=ExtResource("3_58u3k")]
 position = Vector2(547, 215)
+
+[node name="Dispensers" type="Node2D" parent="." unique_id=1320863523]
+
+[node name="CoffeeDispenser" parent="Dispensers" unique_id=433683602 instance=ExtResource("4_mwmjw")]
+position = Vector2(246, -51)
 
 [node name="Ingredients" type="Node2D" parent="." unique_id=1619325474]
 

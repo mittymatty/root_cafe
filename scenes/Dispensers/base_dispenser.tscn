@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c4uexbachl3h3"]
+
+[ext_resource type="Script" uid="uid://dnfitacdeujbp" path="res://scenes/Dispensers/base_dispenser.gd" id="1_jru46"]
+[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="1_quged"]
+
+[node name="BaseDispenser" type="StaticBody2D" unique_id=433683602]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_jru46")
+
+[node name="PourParticles" type="CPUParticles2D" parent="." unique_id=797734758]
+z_index = -1
+position = Vector2(0, 63)
+emitting = false
+emission_shape = 2
+emission_sphere_radius = 6.07
+
+[node name="PourCast" type="RayCast2D" parent="." unique_id=972469928]
+scale = Vector2(4, 4)
+collision_mask = 32
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Cooldown" type="Timer" parent="." unique_id=454062234]
+wait_time = 0.5
+one_shot = true
+
+[node name="PourSound" type="AudioStreamPlayer2D" parent="." unique_id=1258661896]
+volume_db = -2.0
+
+[node name="BeginPourSound" type="AudioStreamPlayer2D" parent="." unique_id=1657715594]
+volume_db = -2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073361181]
+texture = ExtResource("1_quged")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1275846824]
