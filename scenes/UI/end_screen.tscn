@@ -3,9 +3,20 @@
 [ext_resource type="Script" uid="uid://onyi5kjcyhej" path="res://scripts/end_screen.gd" id="1_abjgy"]
 [ext_resource type="Texture2D" uid="uid://dak5470ok06h4" path="res://assets/visuals/main_menu_sunset.png" id="1_my301"]
 [ext_resource type="AudioStream" uid="uid://b4g38lhpuso5n" path="res://assets/audio/End of the game (Root cafe).mp3" id="2_cjddi"]
+[ext_resource type="FontFile" uid="uid://dyps7p2bok230" path="res://assets/imports/Fraunces/static/Fraunces_72pt_Soft-SemiBold.ttf" id="4_ymqa5"]
+[ext_resource type="FontFile" uid="uid://dcu3pnasj4q1i" path="res://assets/imports/Fraunces/static/Fraunces_72pt-Regular.ttf" id="5_ml6af"]
+[ext_resource type="FontFile" uid="uid://dc61qqgcy6c16" path="res://assets/imports/Fraunces/static/Fraunces_72pt_Soft-BoldItalic.ttf" id="6_ml6af"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iaq5"]
 texture = ExtResource("1_my301")
+
+[sub_resource type="LabelSettings" id="LabelSettings_cjddi"]
+font = ExtResource("4_ymqa5")
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_vhg70"]
+font = ExtResource("5_ml6af")
+font_size = 22
 
 [node name="End screen" type="Control" unique_id=1546192841]
 layout_mode = 3
@@ -51,6 +62,9 @@ offset_bottom = 193.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "There are no more customers for today!"
+label_settings = SubResource("LabelSettings_cjddi")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Score" type="Label" parent="Panel/Panel" unique_id=188170358]
 top_level = true
@@ -63,6 +77,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Score: 
 0000"
+label_settings = SubResource("LabelSettings_vhg70")
 horizontal_alignment = 1
 
 [node name="customers_served" type="Label" parent="Panel/Panel" unique_id=824313967]
@@ -76,6 +91,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Happy Customers:
 00000"
+label_settings = SubResource("LabelSettings_vhg70")
 horizontal_alignment = 1
 
 [node name="continue" type="Button" parent="Panel/Panel" unique_id=540896836]
@@ -89,6 +105,7 @@ offset_left = 0.12799072
 offset_top = 0.16400146
 offset_right = -0.21603394
 offset_bottom = -0.085998535
+theme_override_fonts/font = ExtResource("6_ml6af")
 text = "Continue..."
 
 [node name="BacktoMenu" type="Button" parent="Panel/Panel" unique_id=629733002]
@@ -103,6 +120,7 @@ offset_left = 0.12799072
 offset_top = -0.6920166
 offset_right = -0.21603394
 offset_bottom = -0.9420166
+theme_override_fonts/font = ExtResource("6_ml6af")
 text = "- Back to Main Menu -"
 
 [node name="Label4" type="Label" parent="Panel/Panel" unique_id=2103742408]
@@ -116,7 +134,9 @@ offset_bottom = 193.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Credits"
+label_settings = SubResource("LabelSettings_cjddi")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="Panel/Panel" unique_id=257290327]
 visible = false
@@ -134,6 +154,7 @@ Mitchell - Mitchglitch
 Ruslan - Rushurov
 
 Artist: Hannah"
+label_settings = SubResource("LabelSettings_vhg70")
 horizontal_alignment = 1
 
 [node name="Label6" type="Label" parent="Panel/Panel" unique_id=204656456]
@@ -147,6 +168,7 @@ offset_bottom = 450.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Thanks for Playing Root cafe!"
+label_settings = SubResource("LabelSettings_vhg70")
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Panel/Panel/continue" to="." method="_on_continue_pressed"]

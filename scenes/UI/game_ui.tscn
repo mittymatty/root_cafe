@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ds37fvtw7r5xx" path="res://scripts/game_ui.gd" id="1_rns2u"]
 [ext_resource type="FontFile" uid="uid://c4cjkj1o28lbn" path="res://assets/imports/Fraunces/static/Fraunces_72pt_SuperSoft-BoldItalic.ttf" id="1_yubou"]
-[ext_resource type="AudioStream" uid="uid://b3brsgsnd51se" path="res://assets/audio/break_pottery.mp3" id="2_c1sxn"]
+[ext_resource type="AudioStream" uid="uid://ni2lrtlcjej7" path="res://assets/audio/cafe_ambiance.mp3" id="2_5038c"]
+[ext_resource type="AudioStream" uid="uid://8uomqi81fp5m" path="res://assets/audio/book_open.mp3" id="3_5038c"]
+[ext_resource type="AudioStream" uid="uid://bhylhw6dio7qb" path="res://assets/audio/boiling_water.mp3" id="3_jqo5s"]
 [ext_resource type="FontFile" uid="uid://dbqa00rfoviyx" path="res://assets/imports/Fraunces/static/Fraunces_72pt-Black.ttf" id="4_yr8ot"]
 [ext_resource type="Texture2D" uid="uid://dyykmv4c4wyx8" path="res://assets/visuals/recipe_book_closed.png" id="5_d8ncw"]
 [ext_resource type="PackedScene" uid="uid://cvlrcyprv6h7u" path="res://scenes/recipe_book.tscn" id="6_cn4gw"]
@@ -19,7 +21,7 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_hy6xw"]
 font = ExtResource("7_owrpm")
 font_size = 15
-outline_size = 9
+outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_5038c"]
@@ -63,9 +65,20 @@ _data = {
 [node name="GameUI" type="CanvasLayer" unique_id=697466090]
 script = ExtResource("1_rns2u")
 
+[node name="CafeAmbiance" type="AudioStreamPlayer" parent="." unique_id=1454556575]
+stream = ExtResource("2_5038c")
+volume_db = -6.0
+
+[node name="BoilingWater" type="AudioStreamPlayer" parent="." unique_id=566443168]
+stream = ExtResource("3_jqo5s")
+volume_db = -4.5
+
 [node name="ClearCupSound" type="AudioStreamPlayer" parent="." unique_id=104107436]
-stream = ExtResource("2_c1sxn")
+stream = ExtResource("3_5038c")
 volume_db = -2.0
+
+[node name="BookOpen" type="AudioStreamPlayer" parent="." unique_id=471420941]
+stream = ExtResource("3_5038c")
 
 [node name="Both" type="Control" parent="." unique_id=1996756419]
 layout_mode = 3
@@ -232,6 +245,7 @@ visible = false
 layout_mode = 0
 
 [node name="AtCounter" type="Control" parent="." unique_id=210117453]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

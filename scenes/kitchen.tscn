@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://c0yxcqag3v3ng" path="res://assets/visuals/cozy_wallpaper.jpg" id="1_mwmjw"]
 [ext_resource type="PackedScene" uid="uid://v0lweanbyfld" path="res://scenes/shelf.tscn" id="1_v3ycp"]
 [ext_resource type="Script" uid="uid://d1f843ey1svfb" path="res://scripts/kitchen.gd" id="1_vpxcu"]
-[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="2_g3o0j"]
 [ext_resource type="PackedScene" uid="uid://ckdex6j13iw30" path="res://scenes/cup.tscn" id="3_58u3k"]
 [ext_resource type="PackedScene" uid="uid://fp4yoajc8tg" path="res://scenes/Ingredients/water_jug.tscn" id="4_g3o0j"]
 [ext_resource type="PackedScene" uid="uid://16ra2pqyflx" path="res://scenes/Ingredients/milk.tscn" id="4_ibrlr"]
 [ext_resource type="PackedScene" uid="uid://d10f1st02tqm5" path="res://scenes/Dispensers/coffee_dispenser.tscn" id="4_mwmjw"]
+[ext_resource type="Texture2D" uid="uid://b7l3r3hsga8ga" path="res://assets/visuals/brown_icon.png" id="4_vpxcu"]
 [ext_resource type="PackedScene" uid="uid://dtqgaltawjymn" path="res://scenes/Ingredients/cocoa.tscn" id="5_mwmjw"]
 [ext_resource type="PackedScene" uid="uid://db0gjwknslf7x" path="res://scenes/plate.tscn" id="7_58u3k"]
 [ext_resource type="PackedScene" uid="uid://cah8f868etool" path="res://scenes/Ingredients/mixed_spice.tscn" id="8_cwf2y"]
@@ -36,7 +36,7 @@ modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
 z_index = -1
 position = Vector2(-6.1035156e-05, 474)
 scale = Vector2(14.281249, 2.265625)
-texture = ExtResource("2_g3o0j")
+texture = ExtResource("4_vpxcu")
 
 [node name="Dispensers" type="Node2D" parent="." unique_id=1320863523]
 

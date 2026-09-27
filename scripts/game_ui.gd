@@ -3,6 +3,10 @@ extends CanvasLayer
 @onready var in_kitchen: Control = $InKitchen
 @onready var at_counter: Control = $AtCounter
 @onready var clear_cup_sound: AudioStreamPlayer = $ClearCupSound
+@onready var cafe_ambiance: AudioStreamPlayer = $CafeAmbiance
+@onready var book_open: AudioStreamPlayer = $BookOpen
+@onready var boiling_water: AudioStreamPlayer = $BoilingWater
+
 @onready var score_label: Label = $Both/MarginContainer/Score
 @onready var customer_count: Label = $Both/CustomerCount
 
@@ -30,11 +34,15 @@ func on_score_added (_score_to_add) -> void:
 	score_label.text = "Score: " + str(PlayerStatus.score)
 
 func enter_kitchen () -> void:
+	boiling_water.play()
+	cafe_ambiance.stop()
 	recipe_book.hide()
 	in_kitchen.show()
 	at_counter.hide()
 
 func enter_counter () -> void:
+	boiling_water.stop()
+	cafe_ambiance.play()
 	in_kitchen.hide()
 	at_counter.show()
 
@@ -70,5 +78,6 @@ func _on_clear_cup_pressed() -> void:
 	CupContents.clear_cup()
 
 func _on_recipe_book_button_pressed() -> void:
+	book_open.play()
 	arrow.hide()
 	recipe_book.visible = !recipe_book.visible

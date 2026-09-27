@@ -13,7 +13,6 @@ ingredient_name = "Cocoa"
 ingredient_pouring_radians = 1.25
 
 [node name="Sprite2D" parent="." index="0" unique_id=1392852514]
-modulate = Color(0.5172463, 0.27748752, 0.023420712, 1)
 position = Vector2(47, -15.000002)
 rotation = 0.08726646
 scale = Vector2(0.15846297, 0.16871417)

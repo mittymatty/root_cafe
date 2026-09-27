@@ -20,7 +20,7 @@ func _ready() -> void:
 	setup_for_scene_()
 	label.text = "There are no more customers for today!!"
 	score.text = "Score: \n" + str(PlayerStatus.score)
-	customers_served.text = "Happy Customers: \n" + str(PlayerStatus.happy_customers_today)
+	customers_served.text = "Happy Customers: \n" + str(PlayerStatus.happy_customers_today) + " / " + str(PlayerStatus.max_customers_in_day)
 
 
 func _on_continue_pressed() -> void:
