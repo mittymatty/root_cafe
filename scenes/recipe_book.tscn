@@ -39,7 +39,11 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1073759916]
 layout_mode = 2
-text = "ROOT CAFE RECIPE BOOK"
+offset_transform_enabled = true
+offset_transform_position = Vector2(60, -45)
+offset_transform_scale = Vector2(1.2, 1.2)
+text = "𝚁𝙾𝙾𝚃 𝙲𝙰𝙵𝙴 𝚁𝙴𝙲𝙸𝙿𝙴 𝙱𝙾𝙾𝙺"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=567853941]
 layout_mode = 2
