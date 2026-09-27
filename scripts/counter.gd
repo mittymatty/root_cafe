@@ -10,11 +10,11 @@ var customers : Array[Dictionary] = [
 		"texture": "res://assets/visuals/customers/kiwi.png",
 		"texture_scale": 0.3
 	},
-	{
-		"id": "Fennec Fox",
-		"texture": "res://assets/visuals/icon.svg",
-		"texture_scale": 1
-	},
+	#{
+		#"id": "Fennec Fox",
+		#"texture": "res://assets/visuals/icon.svg",
+		#"texture_scale": 1
+	#},
 	{
 		"id": "Mole",
 		"texture": "res://assets/visuals/customers/mole.png",
@@ -26,14 +26,17 @@ var success_dialogs : Array[String] = [
 	"That's perfect!",
 	"Ahhh, lovely.",
 	"This is just the way I like it!",
-	"Thank you so much!"
+	"Thank you so much!",
+	"This looks great!",
+	"Mmmm... that's a good drink right there."
 ]
 
 var failure_dialogs : Array[String] = [
 	"Hmm... I don't think I ordered that...",
 	"Oh, I don't think this is right...",
 	"Am I supposed to drink this?",
-	"This drink doesn't feel right."
+	"This drink doesn't feel right.",
+	"......"
 ]
 
 var possible_drinks : Array[String] = [

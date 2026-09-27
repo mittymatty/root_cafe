@@ -17,7 +17,7 @@
 [node name="Kitchen" type="Node2D" unique_id=1329327937]
 script = ExtResource("1_vpxcu")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1202153087]
+[node name="Wallpaper" type="Sprite2D" parent="." unique_id=1202153087]
 modulate = Color(0.54178685, 0.5417869, 0.54178685, 1)
 z_index = -10
 scale = Vector2(3.5, 3.5)
