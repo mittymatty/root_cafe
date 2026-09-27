@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3yqnkqm87n7i" path="res://Imports/placeholders/image-removebg-preview (21).png" id="2_8e5hq"]
 [ext_resource type="AudioStream" uid="uid://bg2d33a13gcsl" path="res://assets/audio/shop_bell.mp3" id="2_skrdt"]
 [ext_resource type="Texture2D" uid="uid://bug3jt5nx1p31" path="res://assets/visuals/cafe_interior.png" id="2_u6cvs"]
+[ext_resource type="Texture2D" uid="uid://bcli38wh0hymb" path="res://assets/visuals/counter-removebg.png" id="2_uk4ww"]
 [ext_resource type="AudioStream" uid="uid://byv0qudeb0s18" path="res://assets/audio/cash_register.mp3" id="3_3q41x"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="3_laq1u"]
 [ext_resource type="FontFile" uid="uid://bi4hd3w54dmas" path="res://assets/imports/Fraunces/static/Fraunces_72pt-SemiBold.ttf" id="4_yttel"]
@@ -246,6 +247,12 @@ modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
 position = Vector2(361, 805)
 scale = Vector2(9.042969, 2.265625)
 texture = ExtResource("3_laq1u")
+
+[node name="CounterRemovebg" type="Sprite2D" parent="." unique_id=1633025319]
+modulate = Color(0.5689727, 0.56897277, 0.5689727, 1)
+position = Vector2(580, 480.49997)
+scale = Vector2(3.4878194, 3.0226133)
+texture = ExtResource("2_uk4ww")
 
 [connection signal="pressed" from="OrderUI/BAR/Takeorder" to="." method="_on_takeorder_pressed"]
 [connection signal="pressed" from="OrderUI/BAR/placeholder" to="." method="_on_placeholder_pressed"]
