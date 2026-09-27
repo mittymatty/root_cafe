@@ -13,7 +13,7 @@ config_version=5
 config/name="Root Cafe"
 run/main_scene="uid://cufwexgl1tkk3"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://assets/visuals/icon.svg"
+config/icon="uid://c7ere5faynki2"
 
 [autoload]
 
