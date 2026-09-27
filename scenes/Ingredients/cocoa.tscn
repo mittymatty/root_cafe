@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://b84qjw5hgfflg" path="res://scenes/Ingredients/base_ingredient.tscn" id="1_brk0u"]
 [ext_resource type="Texture2D" uid="uid://bbir6ymq8golb" path="res://assets/visuals/particles/particles.png" id="2_nebym"]
+[ext_resource type="Texture2D" uid="uid://40hi5cbtdr1a" path="res://assets/visuals/ingredients/cocoa.png" id="2_xst4s"]
 [ext_resource type="AudioStream" uid="uid://dyxds3nxewc5d" path="res://assets/audio/salt_pour.mp3" id="3_nebym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
-size = Vector2(128, 130)
+size = Vector2(87, 112)
 
 [node name="Cocoa" unique_id=87222405 instance=ExtResource("1_brk0u")]
 ingredient_name = "Cocoa"
@@ -13,8 +14,13 @@ ingredient_pouring_radians = 1.25
 
 [node name="Sprite2D" parent="." index="0" unique_id=1392852514]
 modulate = Color(0.5172463, 0.27748752, 0.023420712, 1)
+position = Vector2(47, -15.000002)
+rotation = 0.08726646
+scale = Vector2(0.15846297, 0.16871417)
+texture = ExtResource("2_xst4s")
 
 [node name="Collision" parent="." index="1" unique_id=139424697]
+position = Vector2(11.5, -9)
 shape = SubResource("RectangleShape2D_gee14")
 
 [node name="PourParticles" parent="." index="2" unique_id=355776253]

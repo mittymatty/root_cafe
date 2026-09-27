@@ -40,19 +40,14 @@ var possible_drinks : Array[String] = [
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	takeorder.text = "Take order"
-	takeorder.disabled = false
+	untake_order()
 	
 	#disable the new customer button at the start and generate the first customer
-	placeholder.disabled = true
-	#_on_placeholder_pressed()
-	
-	#update the order
-	
+	_on_placeholder_pressed()
 	update_order()
-	change_customer()
-	customer_enter()
 
+func drink_served () -> void:
+	pass
 
 func update_order():
 	var customer = customers[current_customer]
@@ -76,6 +71,7 @@ func customer_enter () -> void:
 	#then play the walk in animation
 	animation_player.play("Walk_in")
 	await animation_player.animation_finished
+	speech_bubble.show()
 
 func customer_leave () -> void:
 	animation_player.play("Walk_out")
@@ -85,7 +81,6 @@ func change_customer() -> void:
 	
 	while current_customer == previous_customer and customers.size() > 1:
 		current_customer = customers.find(customers[randi_range(0,customers.size() - 1)])
-	
 
 func take_order () -> void:
 	ordertaken = true
@@ -93,6 +88,7 @@ func take_order () -> void:
 	takeorder.disabled = true
 	
 	placeholder.disabled = false
+	update_order()
 
 func untake_order () -> void:
 	ordertaken = false
@@ -100,15 +96,19 @@ func untake_order () -> void:
 	takeorder.disabled = false
 	placeholder.disabled = true
 
-func _on_placeholder_pressed() -> void:
+func _on_placeholder_pressed() -> void: # "new customer" button
 	speech_bubble.hide()
 	customer_leave()
 	await animation_player.animation_finished
 	change_customer()
 	customer_enter()
-	speech_bubble.show()
 	
 	untake_order()
+
+
+
+
+
 	#
 	##update dialouge 
 	#

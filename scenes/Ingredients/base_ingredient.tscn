@@ -16,7 +16,7 @@ texture = ExtResource("2_blv4x")
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=139424697]
 
 [node name="PourParticles" type="CPUParticles2D" parent="." unique_id=355776253]
-z_index = -1
+z_index = -2
 position = Vector2(57, -59)
 emitting = false
 one_shot = true

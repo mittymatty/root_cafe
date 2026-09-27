@@ -1,23 +1,21 @@
 [gd_scene format=3 uid="uid://d20agtqda16r6"]
 
-[ext_resource type="Script" uid="uid://d1f843ey1svfb" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://om5qkc05n15e" path="res://scenes/kitchen.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c4043vf66imgo" path="res://scenes/counter.tscn" id="3_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://b3te3jfumngns" path="res://assets/audio/Cozy fall jam song Final .mp3" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://dabbpipk7uxvh" path="res://scenes/UI/game_ui.tscn" id="5_iywne"]
 
 [node name="game" type="Node2D" unique_id=2122610920]
-script = ExtResource("1_lnu2h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=130225076]
 position = Vector2(575, 322)
 
 [node name="Kitchen" parent="." unique_id=1329327937 instance=ExtResource("2_lnu2h")]
-visible = false
 position = Vector2(570, 341)
 scale = Vector2(0.75, 0.75)
 
 [node name="Counter" parent="." unique_id=150447696 instance=ExtResource("3_lbhrr")]
+visible = false
 position = Vector2(214, -128)
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1916866419]
