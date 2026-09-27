@@ -12,6 +12,7 @@ extends CanvasLayer
 @export var counter : Node2D
 
 @onready var recipe_book: Control = $InKitchen/Recipe_Book
+@onready var arrow: TextureRect = $InKitchen/RecipeBookButton/Arrow
 
 func _ready() -> void:
 	SignalHub.cup_capacity_changed.connect(check_cup_capacity)
@@ -64,4 +65,5 @@ func _on_clear_cup_pressed() -> void:
 	CupContents.clear_cup()
 
 func _on_recipe_book_button_pressed() -> void:
+	arrow.hide()
 	recipe_book.visible = !recipe_book.visible

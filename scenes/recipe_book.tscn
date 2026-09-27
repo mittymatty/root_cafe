@@ -2,6 +2,27 @@
 
 [ext_resource type="Texture2D" uid="uid://moxccegx1bcx" path="res://assets/imports/placeholders/Screenshot 2026-09-25 213811.png" id="1_4iit1"]
 [ext_resource type="Script" uid="uid://01aqthdc12oh" path="res://scripts/recipe_book.gd" id="1_jfus2"]
+[ext_resource type="FontFile" uid="uid://dufj2x1sl8o7r" path="res://assets/imports/Fraunces/static/Fraunces_72pt_Soft-Black.ttf" id="2_1vfb6"]
+[ext_resource type="FontFile" uid="uid://c76vq2hhxnmt1" path="res://assets/imports/Fraunces/static/Fraunces_72pt_SuperSoft-BlackItalic.ttf" id="2_yxdbw"]
+[ext_resource type="FontFile" uid="uid://cv367jluhs6m7" path="res://assets/imports/Fraunces/static/Fraunces_72pt_Soft-Light.ttf" id="4_1vfb6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfus2"]
+bg_color = Color(0.44, 0.24493334, 0.132, 0.85490197)
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxdbw"]
+bg_color = Color(0.5992123, 0.34616217, 0.19692382, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_jfus2"]
+font = ExtResource("2_yxdbw")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a646j"]
+font = ExtResource("4_1vfb6")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ixrs0"]
 
@@ -15,10 +36,44 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.177
 anchor_bottom = 0.18800001
-offset_left = 3.0
-offset_top = -25.0
-offset_right = 593.0
-offset_bottom = 655.0
+offset_left = -13.0
+offset_top = -1.0
+offset_right = 551.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jfus2")
+
+[node name="Controls" type="HBoxContainer" parent="Panel" unique_id=924167301]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -95.0
+offset_right = 131.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="PreviousButton" type="Button" parent="Panel/Controls" unique_id=483250673]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1vfb6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxdbw")
+text = "  <  "
+
+[node name="NextButton" type="Button" parent="Panel/Controls" unique_id=1084411063]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1vfb6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxdbw")
+text = "  >  "
+
+[node name="CloseButton" type="Button" parent="Panel/Controls" unique_id=212987754]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1vfb6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxdbw")
+text = "  CLOSE   "
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1226812196]
 layout_mode = 1
@@ -36,24 +91,39 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1225848549]
 layout_mode = 2
+theme_override_constants/separation = 18
 
 [node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1073759916]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(60, -45)
 offset_transform_scale = Vector2(1.2, 1.2)
-text = "𝚁𝙾𝙾𝚃 𝙲𝙰𝙵𝙴 𝚁𝙴𝙲𝙸𝙿𝙴 𝙱𝙾𝙾𝙺"
+text = "Root Cafe Recipe Book"
+label_settings = SubResource("LabelSettings_jfus2")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=567853941]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="LeftColumn" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=642451115]
 layout_mode = 2
 
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/LeftColumn" unique_id=269409220]
+custom_minimum_size = Vector2(50, 110)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-70, 0)
+offset_transform_scale = Vector2(0.2, 0.2)
+offset_transform_pivot_ratio = Vector2(1, 0.5)
+texture = ExtResource("1_4iit1")
+expand_mode = 1
+stretch_mode = 3
+
 [node name="DrinkName" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/LeftColumn" unique_id=479655974]
 layout_mode = 2
 text = "DRINK NAME: e.g HOT chocolate"
+label_settings = SubResource("LabelSettings_a646j")
 
 [node name="Ingredients" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/LeftColumn" unique_id=466808852]
 material = SubResource("CanvasItemMaterial_ixrs0")
@@ -63,6 +133,7 @@ text = "INGREDNTS
 -Milk
 -choclate
 -marshmallows"
+label_settings = SubResource("LabelSettings_a646j")
 
 [node name="Instructions" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/LeftColumn" unique_id=1997107874]
 layout_mode = 2
@@ -70,34 +141,12 @@ text = "INSTRUCTIONS
 
 Combine milk + chocolate  
 then add marshmallows. "
+label_settings = SubResource("LabelSettings_a646j")
+autowrap_mode = 2
 
 [node name="RightColumn" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=178850536]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/RightColumn" unique_id=269409220]
-layout_mode = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(30, 70)
-offset_transform_scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_4iit1")
-expand_mode = 2
-stretch_mode = 3
-
-[node name="Controls" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=924167301]
-layout_mode = 2
-
-[node name="PreviousButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/Controls" unique_id=483250673]
-layout_mode = 2
-text = "<"
-
-[node name="NextButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/Controls" unique_id=1084411063]
-layout_mode = 2
-text = ">"
-
-[node name="CloseButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/Controls" unique_id=212987754]
-layout_mode = 2
-text = "CLOSE"
-
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Controls/PreviousButton" to="." method="_on_previous_button_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Controls/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Controls/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Panel/Controls/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="Panel/Controls/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Panel/Controls/CloseButton" to="." method="_on_close_button_pressed"]
