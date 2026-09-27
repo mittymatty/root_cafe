@@ -4,6 +4,8 @@
 [ext_resource type="FontFile" uid="uid://c4cjkj1o28lbn" path="res://assets/imports/Fraunces/static/Fraunces_72pt_SuperSoft-BoldItalic.ttf" id="1_yubou"]
 [ext_resource type="AudioStream" uid="uid://b3brsgsnd51se" path="res://assets/audio/break_pottery.mp3" id="2_c1sxn"]
 [ext_resource type="FontFile" uid="uid://dbqa00rfoviyx" path="res://assets/imports/Fraunces/static/Fraunces_72pt-Black.ttf" id="4_yr8ot"]
+[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="5_5b3ti"]
+[ext_resource type="PackedScene" uid="uid://cvlrcyprv6h7u" path="res://scenes/recipe_book.tscn" id="6_cn4gw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
 font = ExtResource("4_yr8ot")
@@ -122,6 +124,26 @@ theme_override_colors/font_color = Color(0.7505542, 0.9671027, 0, 1)
 theme_override_fonts/font = ExtResource("1_yubou")
 text = "Serve Drink?"
 
+[node name="RecipeBookButton" type="TextureButton" parent="InKitchen" unique_id=1806386968]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -128.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_5b3ti")
+
+[node name="Recipe_Book" parent="InKitchen" unique_id=1033390037 instance=ExtResource("6_cn4gw")]
+visible = false
+layout_mode = 0
+
 [node name="AtCounter" type="Control" parent="." unique_id=210117453]
 layout_mode = 3
 anchors_preset = 15
@@ -155,4 +177,5 @@ text = "Enter the Kitchen"
 [connection signal="pressed" from="InKitchen/MarginContainer/ReturnToCounter" to="." method="_on_return_to_counter_pressed"]
 [connection signal="pressed" from="InKitchen/MarginContainer3/ClearCup" to="." method="_on_clear_cup_pressed"]
 [connection signal="pressed" from="InKitchen/MarginContainer2/ServeDrink" to="." method="_on_serve_drink_pressed"]
+[connection signal="pressed" from="InKitchen/RecipeBookButton" to="." method="_on_recipe_book_button_pressed"]
 [connection signal="pressed" from="AtCounter/MarginContainer/EnterKitchen" to="." method="_on_enter_kitchen_pressed"]

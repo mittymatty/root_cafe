@@ -127,6 +127,9 @@ func untake_order () -> void:
 	takeorder.text = "Take order"
 	takeorder.disabled = false
 	placeholder.disabled = true
+	customer_id.text = ""
+	order_text.text = ""
+	
 	PlayerStatus.current_order = null
 	speech_bubble.hide()
 

@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://byv0qudeb0s18" path="res://assets/audio/cash_register.mp3" id="3_3q41x"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="3_laq1u"]
 [ext_resource type="FontFile" uid="uid://bi4hd3w54dmas" path="res://assets/imports/Fraunces/static/Fraunces_72pt-SemiBold.ttf" id="4_yttel"]
+[ext_resource type="FontFile" uid="uid://d1v866gucldl7" path="res://assets/imports/Fraunces/static/Fraunces_72pt_Soft-Bold.ttf" id="5_me8a0"]
 
 [sub_resource type="Animation" id="Animation_laq1u"]
 length = 0.001
@@ -169,6 +170,7 @@ offset_left = -1679.7839
 offset_top = 4.3999996
 offset_right = -1575.0422
 offset_bottom = 37.629997
+theme_override_fonts/font = ExtResource("5_me8a0")
 text = "Take Order"
 metadata/_edit_use_anchors_ = true
 
@@ -183,6 +185,7 @@ offset_left = -165.256
 offset_top = 5.118202
 offset_right = -45.37326
 offset_bottom = 42.118202
+theme_override_fonts/font = ExtResource("5_me8a0")
 text = "NEW CUSTOMER"
 metadata/_edit_use_anchors_ = true
 

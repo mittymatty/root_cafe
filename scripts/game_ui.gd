@@ -11,6 +11,8 @@ extends CanvasLayer
 @export var kitchen : Node2D
 @export var counter : Node2D
 
+@onready var recipe_book: Control = $InKitchen/Recipe_Book
+
 func _ready() -> void:
 	SignalHub.cup_capacity_changed.connect(check_cup_capacity)
 	SignalHub.add_score.connect(on_score_added)
@@ -25,12 +27,17 @@ func on_score_added (_score_to_add) -> void:
 	score_label.text = "Score: " + str(PlayerStatus.score)
 
 func enter_kitchen () -> void:
+	recipe_book.hide()
 	in_kitchen.show()
 	at_counter.hide()
 
 func enter_counter () -> void:
 	in_kitchen.hide()
 	at_counter.show()
+
+func check_cup_capacity () -> void:
+	serve_drink.visible = CupContents.capacity >= CupContents.min_serve_capacity
+	clear_cup.visible = !is_zero_approx(CupContents.capacity)
 
 func _on_return_to_counter_pressed() -> void:
 	if !counter.visible:
@@ -52,10 +59,9 @@ func _on_serve_drink_pressed() -> void:
 	SignalHub.emit_serve_drink()
 	_on_return_to_counter_pressed()
 
-func check_cup_capacity () -> void:
-	serve_drink.visible = CupContents.capacity >= CupContents.min_serve_capacity
-	clear_cup.visible = !is_zero_approx(CupContents.capacity)
-
 func _on_clear_cup_pressed() -> void:
 	clear_cup_sound.play()
 	CupContents.clear_cup()
+
+func _on_recipe_book_button_pressed() -> void:
+	recipe_book.visible = !recipe_book.visible
