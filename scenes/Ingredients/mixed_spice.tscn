@@ -34,6 +34,7 @@ color = Color(0.6096376, 0.30959123, 0, 1)
 
 [node name="PourCast" parent="." index="3" unique_id=798074953]
 position = Vector2(0, -62)
+rotation = -1.8203784
 
 [node name="Cooldown" parent="." index="4" unique_id=366229566]
 wait_time = 0.7
