@@ -24,21 +24,6 @@ font_size = 15
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_5038c"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("InKitchen/RecipeBookButton/Arrow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(52.571434, 49.714294)]
-}
-
 [sub_resource type="Animation" id="Animation_jqo5s"]
 resource_name = "red_arrow"
 length = 0.73
@@ -58,8 +43,45 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mbbca"]
 _data = {
-&"RESET": SubResource("Animation_5038c"),
 &"red_arrow": SubResource("Animation_jqo5s")
+}
+
+[sub_resource type="Animation" id="Animation_mbbca"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AtCounter/MarginContainer/EnterKitchen/EnterKitchenArrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(243, 17)]
+}
+
+[sub_resource type="Animation" id="Animation_7klwy"]
+resource_name = "red_arrow"
+length = 0.73
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AtCounter/MarginContainer/EnterKitchen/EnterKitchenArrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36671224, 0.73),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(243, 17), Vector2(278, 0), Vector2(243, 17)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvehc"]
+_data = {
+&"RESET": SubResource("Animation_mbbca"),
+&"red_arrow": SubResource("Animation_7klwy")
 }
 
 [node name="GameUI" type="CanvasLayer" unique_id=697466090]
@@ -232,10 +254,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -75.428566
-offset_top = -78.285706
-offset_right = 24.571472
-offset_bottom = 21.836685
+offset_left = -55.544945
+offset_top = -65.50338
+offset_right = 44.45575
+offset_bottom = 34.634094
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("8_r4w1u")
@@ -245,7 +267,6 @@ visible = false
 layout_mode = 0
 
 [node name="AtCounter" type="Control" parent="." unique_id=210117453]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -275,8 +296,27 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_yubou")
 text = "Enter the Kitchen"
 
+[node name="EnterKitchenArrow" type="TextureRect" parent="AtCounter/MarginContainer/EnterKitchen" unique_id=150875249]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 74.0
+offset_top = 17.0
+offset_right = 174.00003
+offset_bottom = 117.0
+grow_horizontal = 0
+rotation = -3.0490668
+texture = ExtResource("8_r4w1u")
+flip_h = true
+
 [node name="AnimateRedArrow" type="AnimationPlayer" parent="." unique_id=49845668]
 libraries/ = SubResource("AnimationLibrary_mbbca")
+autoplay = &"red_arrow"
+
+[node name="AnimateRedArrow2" type="AnimationPlayer" parent="." unique_id=1391441502]
+libraries/ = SubResource("AnimationLibrary_hvehc")
 autoplay = &"red_arrow"
 
 [connection signal="pressed" from="InKitchen/MarginContainer/ReturnToCounter" to="." method="_on_return_to_counter_pressed"]

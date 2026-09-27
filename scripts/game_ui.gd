@@ -18,6 +18,7 @@ extends CanvasLayer
 
 @onready var recipe_book: Control = $InKitchen/Recipe_Book
 @onready var arrow: TextureRect = $InKitchen/RecipeBookButton/Arrow
+@onready var enter_kitchen_arrow: TextureRect = $AtCounter/MarginContainer/EnterKitchen/EnterKitchenArrow
 
 func _ready() -> void:
 	SignalHub.cup_capacity_changed.connect(check_cup_capacity)
@@ -29,6 +30,9 @@ func _ready() -> void:
 		_on_enter_kitchen_pressed()
 	elif counter.visible:
 		_on_return_to_counter_pressed()
+	
+	await get_tree().create_timer(2.25).timeout
+	enter_kitchen_arrow.show()
 
 func on_score_added (_score_to_add) -> void:
 	score_label.text = "Score: " + str(PlayerStatus.score)
@@ -64,7 +68,7 @@ func _on_return_to_counter_pressed() -> void:
 func _on_enter_kitchen_pressed() -> void:
 	if !kitchen.visible:
 		SignalHub.emit_enter_kitchen()
-	
+	enter_kitchen_arrow.hide()
 	kitchen.show()
 	counter.hide()
 	enter_kitchen()
