@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4g38lhpuso5n"
+path="res://.godot/imported/End of the game (Root cafe).mp3-c00d2a61bd318924d40ccde54f3d4164.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/End of the game (Root cafe).mp3"
+dest_files=["res://.godot/imported/End of the game (Root cafe).mp3-c00d2a61bd318924d40ccde54f3d4164.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
