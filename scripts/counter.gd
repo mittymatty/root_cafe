@@ -10,11 +10,11 @@ var customers : Array[Dictionary] = [
 		"texture": "res://assets/visuals/customers/kiwi.png",
 		"texture_scale": 0.3
 	},
-	#{
-		#"id": "Fennec Fox",
-		#"texture": "res://assets/visuals/icon.svg",
-		#"texture_scale": 1
-	#},
+	{
+		"id": "Fennec Fox",
+		"texture": "res://assets/visuals/customers/fennec.png",
+		"texture_scale": 0.35
+	},
 	{
 		"id": "Mole",
 		"texture": "res://assets/visuals/customers/mole.png",
