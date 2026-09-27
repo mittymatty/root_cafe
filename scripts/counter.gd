@@ -41,9 +41,9 @@ var failure_dialogs : Array[String] = [
 
 var possible_drinks : Array[String] = [
 	"res://resources/recipes/hot_cocoa.tres",
-	#"res://resources/recipes/mocha.tres",
-	#"res://resources/recipes/black_coffee.tres",
-	#"res://resources/recipes/flat_white.tres",
+	"res://resources/recipes/mocha.tres",
+	"res://resources/recipes/black_coffee.tres",
+	"res://resources/recipes/flat_white.tres",
 	"res://resources/recipes/chai_latte.tres"
 ]
 
@@ -94,6 +94,7 @@ func on_drink_served () -> void:
 	if success:
 		cash_register.play()
 		SignalHub.emit_add_score(score * 10)
+		PlayerStatus.happy_customers_today += 1
 	else:
 		failure.play()
 	

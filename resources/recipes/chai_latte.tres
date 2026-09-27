@@ -6,4 +6,9 @@
 script = ExtResource("1_k4pho")
 drink_name = "Chai Latte"
 customer_dialog_options = Array[String](["One chai latte, please.", "I would like to order a chai latte.", "Do you guys do chai lattes?"])
+required_ingredients = Dictionary[String, float]({
+"Milk": 10.0,
+"Mixed Spice": 15.0,
+"Water": 50.0
+})
 metadata/_custom_type_script = "uid://cq2l0dchhxpjr"

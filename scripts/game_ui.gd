@@ -18,6 +18,7 @@ extends CanvasLayer
 func _ready() -> void:
 	SignalHub.cup_capacity_changed.connect(check_cup_capacity)
 	SignalHub.add_score.connect(on_score_added)
+	SignalHub.change_customer_count.connect(on_customer_count_changed)
 	check_cup_capacity()
 	on_customer_count_changed()
 	if kitchen.visible:

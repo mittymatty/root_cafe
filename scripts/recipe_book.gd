@@ -5,7 +5,7 @@ var current_page: int = 0
 var recipes = [
 	{
 		"name": "Flat white",
-		"instructions": "Drag the cup under coffee machine, then add milk",
+		"instructions": "Drag the cup under coffee machine, then add milk.",
 		"image": "res://assets/imports/placeholders/flat-white-d8ada0f.png",
 		"recipe_data": "res://resources/recipes/flat_white.tres"
 	},
@@ -19,7 +19,7 @@ var recipes = [
 	
 	{
 		"name": "Hot Cocoa",
-		"instructions": "Combine milk + cocoa and water in any order",
+		"instructions": "Combine milk + cocoa and water in any order.",
 		"image": "res://assets/imports/placeholders/Screenshot 2026-09-25 213811.png",
 		"recipe_data": "res://resources/recipes/hot_cocoa.tres"
 	},
@@ -34,9 +34,16 @@ var recipes = [
 	
 	{
 		"name": "Mochaccino (Mocha)",
-		"instructions": "Drag the cup under coffee machine, then add milk and cocoa",
+		"instructions": "Drag the cup under coffee machine, then add milk and cocoa.",
 		"image": "res://assets/imports/placeholders/images (2).png",
 		"recipe_data": "res://resources/recipes/mocha.tres"
+	},
+	
+	{
+		"name": "Chai Latte",
+		"instructions": "Combine water, mixed spice, and milk.",
+		"image": "res://assets/visuals/chailatte.jpg",
+		"recipe_data": "res://resources/recipes/chai_latte.tres"
 	},
 ]
 

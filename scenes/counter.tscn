@@ -111,6 +111,7 @@ stream = ExtResource("3_3q41x")
 
 [node name="Failure" type="AudioStreamPlayer" parent="." unique_id=1969766586]
 stream = ExtResource("5_u6cvs")
+volume_db = -2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2127684276]
 libraries/ = SubResource("AnimationLibrary_skrdt")
@@ -240,6 +241,7 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="BenchSprite" type="Sprite2D" parent="." unique_id=1572339535]
+visible = false
 modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
 position = Vector2(361, 805)
 scale = Vector2(9.042969, 2.265625)

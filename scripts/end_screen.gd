@@ -19,8 +19,8 @@ func setup_for_scene_():
 func _ready() -> void:
 	setup_for_scene_()
 	label.text = "There are no more customers for today!!"
-	#score.text = 
-	#customers_served.text = 
+	score.text = "Score: \n" + str(PlayerStatus.score)
+	customers_served.text = "Happy Customers: \n" + str(PlayerStatus.happy_customers_today)
 
 
 func _on_continue_pressed() -> void:

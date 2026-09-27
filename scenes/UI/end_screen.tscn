@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://kkd5ncj5stjg"]
 
-[ext_resource type="Script" uid="uid://onyi5kjcyhej" path="res://end_screen.gd" id="1_abjgy"]
+[ext_resource type="Script" uid="uid://onyi5kjcyhej" path="res://scripts/end_screen.gd" id="1_abjgy"]
 [ext_resource type="Texture2D" uid="uid://dak5470ok06h4" path="res://assets/visuals/main_menu_sunset.png" id="1_my301"]
+[ext_resource type="AudioStream" uid="uid://b4g38lhpuso5n" path="res://assets/audio/End of the game (Root cafe).mp3" id="2_cjddi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3iaq5"]
 texture = ExtResource("1_my301")
@@ -14,6 +15,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_abjgy")
+
+[node name="EndOfTheGame(rootCafe)" type="AudioStreamPlayer" parent="." unique_id=176228783]
+stream = ExtResource("2_cjddi")
+volume_db = -5.0
+autoplay = true
 
 [node name="Panel" type="Panel" parent="." unique_id=947346768]
 layout_mode = 0
@@ -68,7 +74,7 @@ offset_right = 785.0
 offset_bottom = 364.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Time spent:
+text = "Happy Customers:
 00000"
 horizontal_alignment = 1
 
