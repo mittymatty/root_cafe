@@ -64,7 +64,6 @@ script = ExtResource("1_sc7mx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2127684276]
 libraries/ = SubResource("AnimationLibrary_skrdt")
-autoplay = &"Walk_in"
 
 [node name="Animal" type="Sprite2D" parent="." unique_id=1919656232]
 modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
@@ -167,20 +166,21 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.10363163
-anchor_top = -0.17767385
-anchor_right = 1.561187
-anchor_bottom = 1.6503854
+anchor_left = -0.10835211
+anchor_top = -0.18562874
+anchor_right = 1.6053756
+anchor_bottom = 1.6556886
 offset_left = 112.999985
 offset_top = 178.0
 offset_right = -112.99997
 offset_bottom = -227.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.023649788
 scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_yttel")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "DIALOGUE"
 horizontal_alignment = 1
 vertical_alignment = 1

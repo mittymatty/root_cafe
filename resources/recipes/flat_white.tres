@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://1t5fswoooyjw"]
+
+[ext_resource type="Script" uid="uid://cq2l0dchhxpjr" path="res://scripts/resources/recipe_resource.gd" id="1_qe46l"]
+
+[resource]
+script = ExtResource("1_qe46l")
+drink_name = "Flat White"
+customer_dialog_options = Array[String](["One flat white coffee, please!", "Ooh, I could really go for a flat white about now."])
+required_ingredients = Dictionary[String, float]({
+"Coffee": 70.0,
+"Milk": 20.0
+})
+metadata/_custom_type_script = "uid://cq2l0dchhxpjr"

@@ -9,7 +9,6 @@ size = Vector2(128, 130)
 
 [node name="Cocoa" unique_id=87222405 instance=ExtResource("1_brk0u")]
 ingredient_name = "Cocoa"
-add_quantity = 2.5
 ingredient_pouring_radians = 1.25
 
 [node name="Sprite2D" parent="." index="0" unique_id=1392852514]
@@ -26,6 +25,9 @@ color = Color(0.52156866, 0.26666668, 0.12941177, 1)
 
 [node name="PourCast" parent="." index="3" unique_id=798074953]
 rotation = -1.2217305
+
+[node name="Cooldown" parent="." index="4" unique_id=366229566]
+wait_time = 0.7
 
 [node name="PourSound" parent="." index="5" unique_id=1676984529]
 stream = ExtResource("3_nebym")

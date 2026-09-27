@@ -12,7 +12,7 @@ size = Vector2(116, 164)
 [node name="WaterJug" unique_id=87222405 instance=ExtResource("1_45eya")]
 gravity_scale = 1.5
 ingredient_name = "Water"
-add_quantity = 8.0
+add_quantity = 10.0
 rotation_step = 0.025
 
 [node name="Sprite2D2" type="Sprite2D" parent="." index="0" unique_id=719712297]

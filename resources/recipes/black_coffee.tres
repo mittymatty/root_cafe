@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://ytylft6ku171"]
+
+[ext_resource type="Script" uid="uid://cq2l0dchhxpjr" path="res://scripts/resources/recipe_resource.gd" id="1_k4mtx"]
+
+[resource]
+script = ExtResource("1_k4mtx")
+drink_name = "Black Coffee"
+customer_dialog_options = Array[String](["I need something strong. Get me a coffee, and make it black.", "I'd like a black coffee."])
+required_ingredients = Dictionary[String, float]({
+"Coffee": 70.0
+})
+metadata/_custom_type_script = "uid://cq2l0dchhxpjr"

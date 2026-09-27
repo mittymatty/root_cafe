@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://ckdex6j13iw30"]
 
 [ext_resource type="Script" uid="uid://bf87u6n472t7j" path="res://scripts/cup.gd" id="1_7q2t1"]
-[ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="1_vafus"]
+[ext_resource type="Texture2D" uid="uid://cup4vbwopfrft" path="res://assets/visuals/cup/cup.png" id="2_7q2t1"]
+[ext_resource type="FontFile" uid="uid://dbqa00rfoviyx" path="res://assets/imports/Fraunces/static/Fraunces_72pt-Black.ttf" id="3_ssn6n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vafus"]
-size = Vector2(57.17068, 90.983475)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kru4q"]
+radius = 32.290848
+height = 77.98584
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q2t1"]
-size = Vector2(55, 93)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqvn3"]
+radius = 20.12001
+height = 66.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8m4r"]
+size = Vector2(96, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn6n"]
 size = Vector2(90.58855, 103.33836)
@@ -29,39 +35,27 @@ freeze_mode = 1
 continuous_cd = 1
 script = ExtResource("1_7q2t1")
 
-[node name="Visuals" type="Node2D" parent="." unique_id=831048373]
-scale = Vector2(0.7, 0.7)
-
-[node name="Sprite2D2" type="Sprite2D" parent="Visuals" unique_id=2047158327]
-position = Vector2(-45.964417, -51.951073)
-scale = Vector2(1.4452119, 0.21359015)
-texture = ExtResource("1_vafus")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Visuals" unique_id=1357350063]
-position = Vector2(-45.964417, 55.048927)
-scale = Vector2(1.4452119, 0.21359015)
-texture = ExtResource("1_vafus")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Visuals" unique_id=922552646]
-position = Vector2(-134.96442, 1.0489273)
-rotation = -1.563854
-scale = Vector2(1.0776619, 0.18057866)
-texture = ExtResource("1_vafus")
-
-[node name="Sprite2D" type="Sprite2D" parent="Visuals" unique_id=693624389]
-scale = Vector2(1.1806751, 1.6926152)
-texture = ExtResource("1_vafus")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=459933541]
+position = Vector2(12.499991, -70.499985)
+scale = Vector2(0.131, 0.156)
+texture = ExtResource("2_7q2t1")
 
 [node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=66195188]
+position = Vector2(5, -19)
 scale = Vector2(1.8890803, 1.6926152)
-shape = SubResource("RectangleShape2D_vafus")
+shape = SubResource("CapsuleShape2D_kru4q")
 
 [node name="HandleCollision" type="CollisionShape2D" parent="." unique_id=478166617]
-position = Vector2(-74.5, 0.5)
-shape = SubResource("RectangleShape2D_7q2t1")
+position = Vector2(66, -38)
+rotation = -0.25022444
+shape = SubResource("CapsuleShape2D_hqvn3")
+
+[node name="HandleCollision2" type="CollisionShape2D" parent="." unique_id=727106047]
+position = Vector2(-1, 36)
+shape = SubResource("RectangleShape2D_v8m4r")
 
 [node name="TippingZone" type="Area2D" parent="." unique_id=1332421718]
-position = Vector2(0, 38.999996)
+position = Vector2(3.9999998, 18.000002)
 scale = Vector2(1.3924624, 1.6685561)
 collision_layer = 0
 collision_mask = 4
@@ -73,7 +67,7 @@ shape = SubResource("RectangleShape2D_ssn6n")
 debug_color = Color(0.70961446, 3.3691526e-07, 0.37117797, 0.41960785)
 
 [node name="Receiver" type="Area2D" parent="." unique_id=1465154855]
-position = Vector2(0, -23.999998)
+position = Vector2(1, -55)
 scale = Vector2(1.5124621, 1.6685561)
 collision_layer = 16
 collision_mask = 0
@@ -85,7 +79,8 @@ shape = SubResource("CapsuleShape2D_kkhl5")
 debug_color = Color(0.6162499, 0.5366143, 0, 0.41960785)
 
 [node name="LiquidReceiver" type="Area2D" parent="." unique_id=1197847473]
-scale = Vector2(1.4324591, 1.1085563)
+position = Vector2(4.9999995, -20)
+scale = Vector2(1.1524588, 0.748556)
 collision_layer = 32
 collision_mask = 0
 
@@ -100,7 +95,7 @@ offset_left = -68.0
 offset_top = -125.0
 offset_right = 68.0
 offset_bottom = -98.0
-show_percentage = false
+theme_override_fonts/font = ExtResource("3_ssn6n")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="TippingZone" to="." method="_on_tipping_zone_body_entered"]

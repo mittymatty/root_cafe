@@ -3,6 +3,31 @@ extends Node2D
 var ordertaken = false 
 var current_customer = 0
 
+var customers : Array[Dictionary] = [
+	{
+		"id": "Kiwi",
+		"texture": "res://assets/visuals/customers/kiwi.png",
+		"texture_scale": 0.2
+	},
+	{
+		"id": "Fennec Fox",
+		"texture": "res://assets/visuals/customers/mole.png",
+		"texture_scale": 0.2
+	},
+	{
+		"id": "Mole",
+		"texture": "res://assets/visuals/customers/mole.png",
+		"texture_scale": 0.35
+	}
+]
+
+var possible_drinks : Array[String] = [
+	"res://resources/recipes/hot_cocoa.tres",
+	"res://resources/recipes/mocha.tres",
+	"res://resources/recipes/black_coffee.tres",
+	"res://resources/recipes/flat_white.tres"
+]
+
 @onready var customer_id: Label = $"OrderUI/BAR/Customer id"
 @onready var order_text: Label = $"OrderUI/BAR/Order text"
 @onready var takeorder: Button = $OrderUI/BAR/Takeorder
@@ -14,43 +39,19 @@ var current_customer = 0
 @onready var animal: Sprite2D = $Animal
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var possible_drinks : Array[String] = [
-	"res://resources/recipes/hot_cocoa.tres",
-	"res://resources/recipes/milk_and_chocolate.tres"
-]
-
-var customers : Array[Dictionary] = [
-	{
-		"id": "Kiwi",
-		#"drink": "Hot Chocolate",
-		#"dialogue": "I'm feeling a bit chilly,\n I'd like a chocolatey one today please!",
-		#"texture": "example path",
-	},
-	{
-		"id": "Fennec Fox",
-		#"drink": "cocoa",
-		#"dialogue": "Just the usual.\n cocoa for me, thanks.",
-		#"texture": "example path",
-	},
-	{
-		"id": "Mole",
-		#"drink": "Coffee",
-		#"dialogue": "Need something to keep me awake on the go.\n Dark and strong.",
-		#"texture": "example path",
-	}
-]
-
 func _ready() -> void:
 	takeorder.text = "Take order"
 	takeorder.disabled = false
 	
 	#disable the new customer button at the start and generate the first customer
 	placeholder.disabled = true
-	_on_placeholder_pressed()
+	#_on_placeholder_pressed()
 	
 	#update the order
 	
 	update_order()
+	change_customer()
+	customer_enter()
 
 
 func update_order():
@@ -65,60 +66,66 @@ func update_order():
 	#print("Updated dialogue to: ", dialogue_text.text)
 
 func _on_takeorder_pressed() -> void:
+	take_order()
+
+func customer_enter () -> void:
+	#after that swap the customer sprites
+	animal.texture = load(customers[current_customer]["texture"])
+	animal.scale = Vector2(customers[current_customer]["texture_scale"],customers[current_customer]["texture_scale"])
+
+	#then play the walk in animation
+	animation_player.play("Walk_in")
+	await animation_player.animation_finished
+
+func customer_leave () -> void:
+	animation_player.play("Walk_out")
+
+func change_customer() -> void:
+	var previous_customer = current_customer
+	
+	while current_customer == previous_customer and customers.size() > 1:
+		current_customer = customers.find(customers[randi_range(0,customers.size() - 1)])
+	
+
+func take_order () -> void:
 	ordertaken = true
 	takeorder.text = "Order taken!\n ✓ Active order"
 	takeorder.disabled = true
 	
 	placeholder.disabled = false
 
-func customer_enter () -> void:
-	#after that swap the customer sprites
-	# $"PLACEHOLDER FOR ANIMALS".texture = load(customers[current_customer]["texture"])
-	
-	#then play the walk in animation
-	animation_player.play("Walk_in")
-	await animation_player.animation_finished
-	speech_bubble.show()
-
-func customer_leave () -> void:
-	speech_bubble.hide()
-	animation_player.play("Walk_out")
-	await animation_player.animation_finished
-
-func change_customer() -> void:
-	var previous_customer = current_customer
-	
-	while current_customer == previous_customer and customers.size() > 1:
-		customers.shuffle()
-		current_customer = customers[0]
-	
-	
-
-func _on_placeholder_pressed() -> void:
-	var previous_customer = current_customer
-	
-	while current_customer == previous_customer:
-		current_customer = randi_range(0, customers.size() - 1)
-	
+func untake_order () -> void:
 	ordertaken = false
 	takeorder.text = "Take order"
 	takeorder.disabled = false
 	placeholder.disabled = true
-	
-	#update dialouge 
-	
-	update_order()
-	
-	#play walk out animation
-	animation_player.play("Walk_out")
+
+func _on_placeholder_pressed() -> void:
+	speech_bubble.hide()
+	customer_leave()
 	await animation_player.animation_finished
+	change_customer()
+	customer_enter()
+	speech_bubble.show()
 	
-	#after that swap the customer sprites
-	# $"PLACEHOLDER FOR ANIMALS".texture = load(customers[current_customer]["texture"])
-	
-	#then play the walk in animation
-	animation_player.play("Walk_in")
-	await animation_player.animation_finished
-	
-	#then lock the button for new customers
-	placeholder.disabled = true
+	untake_order()
+	#
+	##update dialouge 
+	#
+	#update_order()
+	#
+	##play walk out animation
+	#animation_player.play("Walk_out")
+	#await animation_player.animation_finished
+	#
+	##after that swap the customer sprites
+	#print(customers[current_customer])
+	#animal.texture = load(customers[current_customer]["texture"])
+	#animal.scale = Vector2(customers[current_customer]["texture_scale"],customers[current_customer]["texture_scale"])
+	#
+	##then play the walk in animation
+	#animation_player.play("Walk_in")
+	#await animation_player.animation_finished
+	#
+	##then lock the button for new customers
+	#placeholder.disabled = true
