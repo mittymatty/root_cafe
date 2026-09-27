@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var in_kitchen: Control = $InKitchen
 @onready var at_counter: Control = $AtCounter
 @onready var clear_cup_sound: AudioStreamPlayer = $ClearCupSound
-@onready var score: Label = $Both/MarginContainer/Score
+@onready var score_label: Label = $Both/MarginContainer/Score
 
 @onready var serve_drink: Button = $InKitchen/MarginContainer2/ServeDrink
 @onready var clear_cup: Button = $InKitchen/MarginContainer3/ClearCup
@@ -13,12 +13,16 @@ extends CanvasLayer
 
 func _ready() -> void:
 	SignalHub.cup_capacity_changed.connect(check_cup_capacity)
+	SignalHub.add_score.connect(on_score_added)
 	check_cup_capacity()
 	
 	if kitchen.visible:
 		_on_enter_kitchen_pressed()
 	elif counter.visible:
 		_on_return_to_counter_pressed()
+
+func on_score_added (_score_to_add) -> void:
+	score_label.text = "Score: " + str(PlayerStatus.score)
 
 func enter_kitchen () -> void:
 	in_kitchen.show()
@@ -45,7 +49,6 @@ func _on_enter_kitchen_pressed() -> void:
 	enter_kitchen()
 
 func _on_serve_drink_pressed() -> void:
-	#CupContents.check_order_success(PlayerStatus.current_order)
 	SignalHub.emit_serve_drink()
 	_on_return_to_counter_pressed()
 

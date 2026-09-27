@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scripts/counter.gd" id="1_sc7mx"]
 [ext_resource type="Texture2D" uid="uid://3yqnkqm87n7i" path="res://Imports/placeholders/image-removebg-preview (21).png" id="2_8e5hq"]
 [ext_resource type="AudioStream" uid="uid://bg2d33a13gcsl" path="res://assets/audio/shop_bell.mp3" id="2_skrdt"]
+[ext_resource type="AudioStream" uid="uid://byv0qudeb0s18" path="res://assets/audio/cash_register.mp3" id="3_3q41x"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="3_laq1u"]
 [ext_resource type="FontFile" uid="uid://bi4hd3w54dmas" path="res://assets/imports/Fraunces/static/Fraunces_72pt-SemiBold.ttf" id="4_yttel"]
 
@@ -94,6 +95,9 @@ script = ExtResource("1_sc7mx")
 
 [node name="ShopBell" type="AudioStreamPlayer" parent="." unique_id=142244624]
 stream = ExtResource("2_skrdt")
+
+[node name="CashRegister" type="AudioStreamPlayer" parent="." unique_id=540613255]
+stream = ExtResource("3_3q41x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2127684276]
 libraries/ = SubResource("AnimationLibrary_skrdt")

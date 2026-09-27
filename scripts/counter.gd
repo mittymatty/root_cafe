@@ -51,6 +51,7 @@ var possible_drinks : Array[String] = [
 @onready var speech_bubble: NinePatchRect = $OrderUI/SpeechBubble
 
 @onready var shop_bell: AudioStreamPlayer = $ShopBell
+@onready var cash_register: AudioStreamPlayer = $CashRegister
 
 @onready var animal: Sprite2D = $Animal
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -64,20 +65,26 @@ func _ready() -> void:
 	SignalHub.serve_drink.connect(on_drink_served)
 
 func on_drink_served () -> void:
-	CupContents.clear_cup()
-	
 	var score = CupContents.check_order_success(PlayerStatus.current_order)
+	var success : bool = false
 	
 	if score == PlayerStatus.current_order.required_ingredients.size():
 		success_dialogs.shuffle()
 		dialogue_text.text = success_dialogs[0]
-		PlayerStatus.score += score * 10
+		success = true
 	else:
 		failure_dialogs.shuffle()
 		dialogue_text.text = failure_dialogs[0]
 	
+	CupContents.clear_cup()
+	
 	animation_player.play("talk")
 	await animation_player.animation_finished
+	
+	if success:
+		cash_register.play()
+		SignalHub.emit_add_score(score * 10)
+	
 	#clear last order
 	untake_order()
 	customer_leave()
