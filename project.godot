@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Root Cafe"
-run/main_scene="uid://d20agtqda16r6"
+run/main_scene="uid://cufwexgl1tkk3"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://assets/visuals/icon.svg"
 

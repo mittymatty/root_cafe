@@ -7,32 +7,36 @@ var recipes = [
 		"name": "Hot Cocoa",
 		"ingredients": ["Milk :   10% ", "Cocoa :   10%","Water :   50%"],
 		"instructions": "Combine milk + cocoa and water in any order",
-		"image": "res://assets/imports/placeholders/Screenshot 2026-09-25 213811.png"
+		"image": "res://assets/imports/placeholders/Screenshot 2026-09-25 213811.png",
+		"recipe_data": "res://resources/recipes/hot_cocoa.tres"
 	},
 	{
 		"name": "Black Coffee",
 		"ingredients": ["Coffee :   %70"],
-		"instructions": "Put the cup in the coffee machine",
-		"image": "res://assets/imports/placeholders/Screenshot 2026-09-27 173633.png"
+		"instructions": "Drag the cup under the coffee machine.",
+		"image": "res://assets/imports/placeholders/Screenshot 2026-09-27 173633.png",
+		"recipe_data": "res://resources/recipes/black_coffee.tres"
 	},
-	
 	{
 		"name": "Coffee",
 		"ingredients": ["Water :    %50", "Coffee :    %50"],
-		"instructions": "Put the cup in the coffee maker , then add water",
-		"image": "res://assets/imports/placeholders/images (1).png"
+		"instructions": "Drag the cup under the coffee maker, then add water",
+		"image": "res://assets/imports/placeholders/images (1).png",
+		"recipe_data": "res://resources/recipes/coffee.tres"
 	},
 	{
 		"name": "Flat white",
 		"ingredients": ["Milk:    %20", "Coffee :    %70"],
-		"instructions": "Put cup in coffee machine, then add milk",
-		"image": "res://assets/imports/placeholders/flat-white-d8ada0f.png"
+		"instructions": "Drag the cup under coffee machine, then add milk",
+		"image": "res://assets/imports/placeholders/flat-white-d8ada0f.png",
+		"recipe_data": "res://resources/recipes/flat_white.tres"
 	},
 	{
 		"name": "Mocha / Mochaccino",
 		"ingredients": ["Milk:    %10", "Coffee :    %60","Cocoa :    %10"],
-		"instructions": "Put cup in coffee machine, then add milk and Cocoa",
-		"image": "res://assets/imports/placeholders/images (2).png"
+		"instructions": "Drag the cup under coffee machine, then add milk and cocoa",
+		"image": "res://assets/imports/placeholders/images (2).png",
+		"recipe_data": "res://resources/recipes/mocha.tres"
 	},
 ]
 
