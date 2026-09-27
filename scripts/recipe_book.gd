@@ -72,7 +72,7 @@ func display_current_recipe() -> void:
 		for ingredient_name in recipe_data.required_ingredients:
 			ingredients.text += "- " + ingredient_name +  ": At least " + str(int(recipe_data.required_ingredients[ingredient_name])) +"% \n"
 	
-	if recipe.has("image") and FileAccess.file_exists(recipe["image"]):
+	if recipe.has("image") and recipe["image"] != "":
 		texture_rect.texture = load(recipe["image"])
 	else:
 		texture_rect.texture = null
