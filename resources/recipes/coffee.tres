@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RecipeData" format=3 uid="uid://d1bcbtaj5bb6x"]
+
+[ext_resource type="Script" uid="uid://cq2l0dchhxpjr" path="res://scripts/resources/recipe_resource.gd" id="1_34pne"]
+
+[resource]
+script = ExtResource("1_34pne")
+drink_name = "Coffee"
+customer_dialog_options = Array[String](["\"Just the usual. Hot cocoa for me, thanks.\"", "Hot cocoa, please!", "Brr, it's chilly out. I need a cup of cocoa to warm up!"])
+required_ingredients = Dictionary[String, float]({
+"Coffee ": 50.0,
+"Water": 50.0
+})
+metadata/_custom_type_script = "uid://cq2l0dchhxpjr"

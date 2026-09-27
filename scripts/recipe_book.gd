@@ -21,7 +21,13 @@ var recipes = [
 		"ingredients": ["Water", "Coffee Beans"],
 		"instructions": "Put the cup in the coffee maker and worry less",
 		"image": "res://assets/imports/placeholders/images (1).png"
-	}
+	},
+	{
+		"name": "Flat white",
+		"ingredients": ["Milk", "Coffee"],
+		"instructions": "Put cup in coffee machine, then add milk",
+		"image": "res://assets/imports/placeholders/Screenshot 2026-09-25 213811.png"
+	},
 ]
 
 @onready var drink_name: Label = $Panel/MarginContainer/VBoxContainer/HBoxContainer/LeftColumn/DrinkName
