@@ -7,18 +7,32 @@ var customers : Array[Dictionary] = [
 	{
 		"id": "Kiwi",
 		"texture": "res://assets/visuals/customers/kiwi.png",
-		"texture_scale": 0.2
+		"texture_scale": 0.3
 	},
 	{
 		"id": "Fennec Fox",
-		"texture": "res://assets/visuals/customers/mole.png",
-		"texture_scale": 0.2
+		"texture": "res://assets/visuals/icon.svg",
+		"texture_scale": 1
 	},
 	{
 		"id": "Mole",
 		"texture": "res://assets/visuals/customers/mole.png",
 		"texture_scale": 0.35
 	}
+]
+
+var success_dialogs : Array[String] = [
+	"That's perfect!",
+	"Ahhh, lovely.",
+	"This is just the way I like it!",
+	"Thank you so much!"
+]
+
+var failure_dialogs : Array[String] = [
+	"Hmm... I don't think I ordered that...",
+	"Oh, I don't think this is right...",
+	"Am I supposed to drink this?",
+	"This drink doesn't feel right."
 ]
 
 var possible_drinks : Array[String] = [
@@ -36,18 +50,78 @@ var possible_drinks : Array[String] = [
 
 @onready var speech_bubble: NinePatchRect = $OrderUI/SpeechBubble
 
+@onready var shop_bell: AudioStreamPlayer = $ShopBell
+
 @onready var animal: Sprite2D = $Animal
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	untake_order()
+	change_customer()
+	customer_enter()
+	update_order()
 	
-	#disable the new customer button at the start and generate the first customer
-	_on_placeholder_pressed()
+	SignalHub.serve_drink.connect(on_drink_served)
+
+func on_drink_served () -> void:
+	CupContents.clear_cup()
+	
+	var score = CupContents.check_order_success(PlayerStatus.current_order)
+	
+	if score == PlayerStatus.current_order.required_ingredients.size():
+		success_dialogs.shuffle()
+		dialogue_text.text = success_dialogs[0]
+		PlayerStatus.score += score * 10
+	else:
+		failure_dialogs.shuffle()
+		dialogue_text.text = failure_dialogs[0]
+	
+	animation_player.play("talk")
+	await animation_player.animation_finished
+	#clear last order
+	untake_order()
+	customer_leave()
+	await animation_player.animation_finished
+	change_customer()
+	customer_enter()
 	update_order()
 
-func drink_served () -> void:
-	pass
+func _on_takeorder_pressed() -> void:
+	take_order()
+
+func customer_enter () -> void:
+	#after that swap the customer sprites
+	animal.texture = load(customers[current_customer]["texture"])
+	animal.scale = Vector2(customers[current_customer]["texture_scale"],customers[current_customer]["texture_scale"])
+
+	#then play the walk in animation
+	animation_player.play("Walk_in")
+	shop_bell.play()
+	await animation_player.animation_finished
+	speech_bubble.show()
+
+func customer_leave () -> void:
+	animation_player.play("Walk_out")
+	await animation_player.animation_finished
+
+func change_customer() -> void:
+	var previous_customer = current_customer
+	while current_customer == previous_customer and customers.size() > 1:
+		current_customer = customers.find(customers[randi_range(0,customers.size() - 1)])
+
+func take_order () -> void:
+	ordertaken = true
+	takeorder.text = "Order taken!\n ✓ Active order"
+	takeorder.disabled = true
+	placeholder.disabled = false
+
+func untake_order () -> void:
+	ordertaken = false
+	takeorder.text = "Take order"
+	takeorder.disabled = false
+	placeholder.disabled = true
+	PlayerStatus.current_order = null
+	speech_bubble.hide()
 
 func update_order():
 	var customer = customers[current_customer]
@@ -60,72 +134,11 @@ func update_order():
 	dialogue_text.text = recipe_for_order.get_random_dialog() #customer["dialogue"]
 	#print("Updated dialogue to: ", dialogue_text.text)
 
-func _on_takeorder_pressed() -> void:
-	take_order()
-
-func customer_enter () -> void:
-	#after that swap the customer sprites
-	animal.texture = load(customers[current_customer]["texture"])
-	animal.scale = Vector2(customers[current_customer]["texture_scale"],customers[current_customer]["texture_scale"])
-
-	#then play the walk in animation
-	animation_player.play("Walk_in")
-	await animation_player.animation_finished
-	speech_bubble.show()
-
-func customer_leave () -> void:
-	animation_player.play("Walk_out")
-
-func change_customer() -> void:
-	var previous_customer = current_customer
-	
-	while current_customer == previous_customer and customers.size() > 1:
-		current_customer = customers.find(customers[randi_range(0,customers.size() - 1)])
-
-func take_order () -> void:
-	ordertaken = true
-	takeorder.text = "Order taken!\n ✓ Active order"
-	takeorder.disabled = true
-	
-	placeholder.disabled = false
-	update_order()
-
-func untake_order () -> void:
-	ordertaken = false
-	takeorder.text = "Take order"
-	takeorder.disabled = false
-	placeholder.disabled = true
-
 func _on_placeholder_pressed() -> void: # "new customer" button
-	speech_bubble.hide()
+	#clear last order
+	untake_order()
 	customer_leave()
 	await animation_player.animation_finished
 	change_customer()
 	customer_enter()
-	
-	untake_order()
-
-
-
-
-
-	#
-	##update dialouge 
-	#
-	#update_order()
-	#
-	##play walk out animation
-	#animation_player.play("Walk_out")
-	#await animation_player.animation_finished
-	#
-	##after that swap the customer sprites
-	#print(customers[current_customer])
-	#animal.texture = load(customers[current_customer]["texture"])
-	#animal.scale = Vector2(customers[current_customer]["texture_scale"],customers[current_customer]["texture_scale"])
-	#
-	##then play the walk in animation
-	#animation_player.play("Walk_in")
-	#await animation_player.animation_finished
-	#
-	##then lock the button for new customers
-	#placeholder.disabled = true
+	update_order()

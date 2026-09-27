@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scripts/counter.gd" id="1_sc7mx"]
 [ext_resource type="Texture2D" uid="uid://3yqnkqm87n7i" path="res://Imports/placeholders/image-removebg-preview (21).png" id="2_8e5hq"]
+[ext_resource type="AudioStream" uid="uid://bg2d33a13gcsl" path="res://assets/audio/shop_bell.mp3" id="2_skrdt"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="3_laq1u"]
 [ext_resource type="FontFile" uid="uid://bi4hd3w54dmas" path="res://assets/imports/Fraunces/static/Fraunces_72pt-SemiBold.ttf" id="4_yttel"]
 
@@ -19,10 +20,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-404, 507.00006)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animal:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_yttel"]
 resource_name = "Walk_in"
-length = 6.0
+length = 1.5999999999999999
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -52,21 +65,40 @@ tracks/0/keys = {
 "values": [Vector2(408, 496.00006), Vector2(559, 560), Vector2(789, 541.00006), Vector2(945, 591), Vector2(1140, 538.00006), Vector2(1383, 570)]
 }
 
+[sub_resource type="Animation" id="Animation_3q41x"]
+resource_name = "talk"
+length = 2.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animal:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.77, 1.15, 1.45, 1.75, 2.07, 2.3666666, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_skrdt"]
 _data = {
 &"RESET": SubResource("Animation_laq1u"),
 &"Walk_in": SubResource("Animation_yttel"),
-&"Walk_out": SubResource("Animation_skrdt")
+&"Walk_out": SubResource("Animation_skrdt"),
+&"talk": SubResource("Animation_3q41x")
 }
 
 [node name="Counter" type="Node2D" unique_id=150447696]
 script = ExtResource("1_sc7mx")
 
+[node name="ShopBell" type="AudioStreamPlayer" parent="." unique_id=142244624]
+stream = ExtResource("2_skrdt")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2127684276]
 libraries/ = SubResource("AnimationLibrary_skrdt")
 
 [node name="Animal" type="Sprite2D" parent="." unique_id=1919656232]
-modulate = Color(0.51595205, 0.27602226, 0.07879277, 1)
 position = Vector2(-404, 507.00006)
 scale = Vector2(3.051989, 4.5723267)
 texture = ExtResource("3_laq1u")

@@ -28,7 +28,7 @@ func clear_cup() -> void:
 	capacity = 0.0
 	SignalHub.emit_cup_capacity_changed()
 
-func check_order_success (recipe : RecipeData):
+func check_order_success (recipe : RecipeData) -> int:
 	print(recipe)
 	var ingredients_remaining : Dictionary[String,float] = recipe.required_ingredients.duplicate()
 	var cup_contents : Dictionary[String,float] = CupContents.contents
@@ -40,5 +40,8 @@ func check_order_success (recipe : RecipeData):
 		if ingredients_remaining.has(ingredient) and !is_zero_approx(ingredients_remaining[ingredient]) and ingredient_quantity >= ingredients_remaining[ingredient]:
 			print("Got ingredient ",ingredient, " correct, quantity needed: ",ingredients_remaining[ingredient],", quantity given: ",ingredient_quantity)
 			score += 1
+		else:
+			print("Got ingredient ",ingredient, " incorrect, quantity needed: ",ingredients_remaining[ingredient],", quantity given: ",ingredient_quantity)
 	
 	print("Score: ", score,"/",max_score)
+	return score

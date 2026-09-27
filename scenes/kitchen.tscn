@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0yxcqag3v3ng" path="res://assets/visuals/cozy_wallpaper.jpg" id="1_mwmjw"]
 [ext_resource type="PackedScene" uid="uid://v0lweanbyfld" path="res://scenes/shelf.tscn" id="1_v3ycp"]
-[ext_resource type="Script" uid="uid://d1f843ey1svfb" path="res://scripts/game.gd" id="1_vpxcu"]
+[ext_resource type="Script" uid="uid://d1f843ey1svfb" path="res://scripts/kitchen.gd" id="1_vpxcu"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="2_g3o0j"]
 [ext_resource type="PackedScene" uid="uid://ckdex6j13iw30" path="res://scenes/cup.tscn" id="3_58u3k"]
 [ext_resource type="PackedScene" uid="uid://fp4yoajc8tg" path="res://scenes/Ingredients/water_jug.tscn" id="4_g3o0j"]

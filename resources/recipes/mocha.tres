@@ -7,7 +7,8 @@ script = ExtResource("1_m48wb")
 drink_name = "Mochaccino"
 customer_dialog_options = Array[String](["Something sweet. Do you do mochas?", "Gimme a mochaccino, please!"])
 required_ingredients = Dictionary[String, float]({
-"Cocoa": 15.0,
-"Coffee": 60.0
+"Cocoa": 10.0,
+"Coffee": 60.0,
+"Milk": 10.0
 })
 metadata/_custom_type_script = "uid://cq2l0dchhxpjr"

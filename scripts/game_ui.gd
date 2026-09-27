@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var in_kitchen: Control = $InKitchen
 @onready var at_counter: Control = $AtCounter
 @onready var clear_cup_sound: AudioStreamPlayer = $ClearCupSound
-
+@onready var score: Label = $Both/MarginContainer/Score
 
 @onready var serve_drink: Button = $InKitchen/MarginContainer2/ServeDrink
 @onready var clear_cup: Button = $InKitchen/MarginContainer3/ClearCup
@@ -45,7 +45,9 @@ func _on_enter_kitchen_pressed() -> void:
 	enter_kitchen()
 
 func _on_serve_drink_pressed() -> void:
-	CupContents.check_order_success(PlayerStatus.current_order)
+	#CupContents.check_order_success(PlayerStatus.current_order)
+	SignalHub.emit_serve_drink()
+	_on_return_to_counter_pressed()
 
 func check_cup_capacity () -> void:
 	serve_drink.visible = CupContents.capacity >= CupContents.min_serve_capacity

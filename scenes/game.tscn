@@ -11,11 +11,11 @@
 position = Vector2(575, 322)
 
 [node name="Kitchen" parent="." unique_id=1329327937 instance=ExtResource("2_lnu2h")]
+visible = false
 position = Vector2(570, 341)
 scale = Vector2(0.75, 0.75)
 
 [node name="Counter" parent="." unique_id=150447696 instance=ExtResource("3_lbhrr")]
-visible = false
 position = Vector2(214, -128)
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1916866419]
