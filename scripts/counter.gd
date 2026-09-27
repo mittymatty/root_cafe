@@ -2,6 +2,7 @@ extends Node2D
 
 var ordertaken = false 
 var current_customer = 0
+var is_transitioning: bool = false
 
 var customers : Array[Dictionary] = [
 	{
@@ -59,12 +60,16 @@ var possible_drinks : Array[String] = [
 func _ready() -> void:
 	untake_order()
 	change_customer()
-	customer_enter()
+	await customer_enter()
 	update_order()
 	
 	SignalHub.serve_drink.connect(on_drink_served)
 
 func on_drink_served () -> void:
+	if is_transitioning:
+		return
+	is_transitioning = true
+	
 	var score = CupContents.check_order_success(PlayerStatus.current_order)
 	var success : bool = false
 	
@@ -87,11 +92,12 @@ func on_drink_served () -> void:
 	
 	#clear last order
 	untake_order()
-	customer_leave()
-	await animation_player.animation_finished
+	await customer_leave()
 	change_customer()
-	customer_enter()
+	await customer_enter()
 	update_order()
+	
+	is_transitioning = false
 
 func _on_takeorder_pressed() -> void:
 	take_order()
@@ -108,13 +114,15 @@ func customer_enter () -> void:
 	speech_bubble.show()
 
 func customer_leave () -> void:
+	speech_bubble.hide()
 	animation_player.play("Walk_out")
 	await animation_player.animation_finished
+	animal.texture = null
 
 func change_customer() -> void:
 	var previous_customer = current_customer
 	while current_customer == previous_customer and customers.size() > 1:
-		current_customer = customers.find(customers[randi_range(0,customers.size() - 1)])
+		current_customer = randi() % customers.size()
 
 func take_order () -> void:
 	ordertaken = true
@@ -145,10 +153,15 @@ func update_order():
 	#print("Updated dialogue to: ", dialogue_text.text)
 
 func _on_placeholder_pressed() -> void: # "new customer" button
+	if is_transitioning:
+		return
+	is_transitioning = true
+	
 	#clear last order
 	untake_order()
-	customer_leave()
-	await animation_player.animation_finished
+	await customer_leave()
 	change_customer()
-	customer_enter()
+	await customer_enter()
 	update_order()
+	
+	is_transitioning = false
