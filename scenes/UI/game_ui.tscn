@@ -12,7 +12,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
 font = ExtResource("4_yr8ot")
-font_size = 40
+font_size = 29
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
@@ -97,6 +97,20 @@ layout_mode = 2
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_xrivr")
 horizontal_alignment = 2
+
+[node name="CustomerCount" type="Label" parent="Both" unique_id=755369327]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -174.0
+offset_top = 20.0
+offset_right = 174.0
+offset_bottom = 71.0
+grow_horizontal = 2
+text = "Customers Left: 0"
+label_settings = SubResource("LabelSettings_xrivr")
+horizontal_alignment = 1
 
 [node name="InKitchen" type="Control" parent="." unique_id=836354453]
 layout_mode = 3
@@ -206,8 +220,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -75.428566
 offset_top = -78.285706
-offset_right = 24.571655
-offset_bottom = 21.721893
+offset_right = 24.571442
+offset_bottom = 21.833115
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("8_r4w1u")

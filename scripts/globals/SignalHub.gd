@@ -12,6 +12,10 @@ signal serve_drink
 
 signal add_score (score_to_add : int)
 
+signal change_customer_count
+
+signal day_end
+
 func emit_add_ingredient (ingredient : String, quantity : float) -> void:
 	add_ingredient.emit(ingredient,quantity)
 
@@ -30,3 +34,9 @@ func emit_serve_drink () -> void:
 func emit_add_score (score_to_add : int) -> void:
 	PlayerStatus.score += score_to_add
 	add_score.emit(score_to_add)
+
+func emit_change_customer_count () -> void:
+	change_customer_count.emit()
+
+func emit_day_end () -> void:
+	day_end.emit()

@@ -41,9 +41,10 @@ var failure_dialogs : Array[String] = [
 
 var possible_drinks : Array[String] = [
 	"res://resources/recipes/hot_cocoa.tres",
-	"res://resources/recipes/mocha.tres",
-	"res://resources/recipes/black_coffee.tres",
-	"res://resources/recipes/flat_white.tres"
+	#"res://resources/recipes/mocha.tres",
+	#"res://resources/recipes/black_coffee.tres",
+	#"res://resources/recipes/flat_white.tres",
+	"res://resources/recipes/chai_latte.tres"
 ]
 
 @onready var customer_id: Label = $"OrderUI/BAR/Customer id"
@@ -56,6 +57,7 @@ var possible_drinks : Array[String] = [
 
 @onready var shop_bell: AudioStreamPlayer = $ShopBell
 @onready var cash_register: AudioStreamPlayer = $CashRegister
+@onready var failure: AudioStreamPlayer = $Failure
 
 @onready var animal: Sprite2D = $Animal
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -92,10 +94,16 @@ func on_drink_served () -> void:
 	if success:
 		cash_register.play()
 		SignalHub.emit_add_score(score * 10)
+	else:
+		failure.play()
 	
 	#clear last order
 	untake_order()
 	await customer_leave()
+	
+	PlayerStatus.customers_left_in_day -= 1
+	SignalHub.emit_change_customer_count()
+	
 	change_customer()
 	await customer_enter()
 	update_order()
@@ -147,6 +155,7 @@ func untake_order () -> void:
 func update_order():
 	var customer = customers[current_customer]
 	possible_drinks.shuffle()
+	
 	var recipe_for_order : RecipeData = load(possible_drinks[0]) #customer["recipe"]
 	PlayerStatus.current_order = recipe_for_order
 	

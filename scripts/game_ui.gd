@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var at_counter: Control = $AtCounter
 @onready var clear_cup_sound: AudioStreamPlayer = $ClearCupSound
 @onready var score_label: Label = $Both/MarginContainer/Score
+@onready var customer_count: Label = $Both/CustomerCount
 
 @onready var serve_drink: Button = $InKitchen/MarginContainer2/ServeDrink
 @onready var clear_cup: Button = $InKitchen/MarginContainer3/ClearCup
@@ -18,7 +19,7 @@ func _ready() -> void:
 	SignalHub.cup_capacity_changed.connect(check_cup_capacity)
 	SignalHub.add_score.connect(on_score_added)
 	check_cup_capacity()
-	
+	on_customer_count_changed()
 	if kitchen.visible:
 		_on_enter_kitchen_pressed()
 	elif counter.visible:
@@ -39,6 +40,9 @@ func enter_counter () -> void:
 func check_cup_capacity () -> void:
 	serve_drink.visible = CupContents.capacity >= CupContents.min_serve_capacity
 	clear_cup.visible = !is_zero_approx(CupContents.capacity)
+
+func on_customer_count_changed () -> void:
+	customer_count.text = "Customers Left: " + str(PlayerStatus.customers_left_in_day)
 
 func _on_return_to_counter_pressed() -> void:
 	if !counter.visible:

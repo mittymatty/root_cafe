@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://bnw1yumnb2q1c" path="res://scripts/counter.gd" id="1_sc7mx"]
 [ext_resource type="Texture2D" uid="uid://3yqnkqm87n7i" path="res://Imports/placeholders/image-removebg-preview (21).png" id="2_8e5hq"]
 [ext_resource type="AudioStream" uid="uid://bg2d33a13gcsl" path="res://assets/audio/shop_bell.mp3" id="2_skrdt"]
-[ext_resource type="Texture2D" uid="uid://c0yxcqag3v3ng" path="res://assets/visuals/cozy_wallpaper.jpg" id="2_vv7id"]
+[ext_resource type="Texture2D" uid="uid://bug3jt5nx1p31" path="res://assets/visuals/cafe_interior.png" id="2_u6cvs"]
 [ext_resource type="AudioStream" uid="uid://byv0qudeb0s18" path="res://assets/audio/cash_register.mp3" id="3_3q41x"]
 [ext_resource type="Texture2D" uid="uid://csi1vcvuv1ujy" path="res://assets/visuals/icon.svg" id="3_laq1u"]
 [ext_resource type="FontFile" uid="uid://bi4hd3w54dmas" path="res://assets/imports/Fraunces/static/Fraunces_72pt-SemiBold.ttf" id="4_yttel"]
 [ext_resource type="FontFile" uid="uid://d1v866gucldl7" path="res://assets/imports/Fraunces/static/Fraunces_72pt_Soft-Bold.ttf" id="5_me8a0"]
+[ext_resource type="AudioStream" uid="uid://ddpxkylwc3oxr" path="res://assets/audio/failure.mp3" id="5_u6cvs"]
 
 [sub_resource type="Animation" id="Animation_laq1u"]
 length = 0.001
@@ -98,15 +99,18 @@ script = ExtResource("1_sc7mx")
 [node name="Wallpaper" type="Sprite2D" parent="." unique_id=1641631642]
 modulate = Color(0.54178685, 0.5417869, 0.54178685, 1)
 z_index = -10
-position = Vector2(505, 403.00003)
-scale = Vector2(3.5, 3.5)
-texture = ExtResource("2_vv7id")
+position = Vector2(348, 533)
+scale = Vector2(0.806293, 0.76851845)
+texture = ExtResource("2_u6cvs")
 
 [node name="ShopBell" type="AudioStreamPlayer" parent="." unique_id=142244624]
 stream = ExtResource("2_skrdt")
 
 [node name="CashRegister" type="AudioStreamPlayer" parent="." unique_id=540613255]
 stream = ExtResource("3_3q41x")
+
+[node name="Failure" type="AudioStreamPlayer" parent="." unique_id=1969766586]
+stream = ExtResource("5_u6cvs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2127684276]
 libraries/ = SubResource("AnimationLibrary_skrdt")
