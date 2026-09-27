@@ -10,10 +10,10 @@ var recipes = [
 		"image": "res://assets/imports/placeholders/Screenshot 2026-09-25 213811.png"
 	},
 	{
-		"name": "Cocoa",
-		"ingredients": ["Milk", "Cocoa Powder", "Sugar"],
-		"instructions": "Mix cocoa powder and sugar with hot milk.",
-		"image": "res://assets/imports/placeholders/Easy-Hot-Chocolate-Recipe-with-Cocoa.jpg"
+		"name": "Black Coffee",
+		"ingredients": ["Coffee :   %70"],
+		"instructions": "Put the cup in the coffee machine",
+		"image": "res://assets/imports/placeholders/Screenshot 2026-09-27 173633.png"
 	},
 	
 	{
