@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://om5qkc05n15e" path="res://scenes/kitchen.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c4043vf66imgo" path="res://scenes/counter.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://5tsawn866bsp" path="res://scenes/pause_menu/pause_menu.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dabbpipk7uxvh" path="res://scenes/UI/game_ui.tscn" id="5_iywne"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_lnu2h"]
@@ -29,3 +30,9 @@ autoplay = true
 [node name="GameUI" parent="." unique_id=697466090 node_paths=PackedStringArray("kitchen", "counter") instance=ExtResource("5_iywne")]
 kitchen = NodePath("../Kitchen")
 counter = NodePath("../Counter")
+
+[node name="Pause Menu" parent="." unique_id=1368006392 instance=ExtResource("4_lbhrr")]
+offset_left = 575.0
+offset_top = 323.0
+offset_right = 575.0
+offset_bottom = 323.0
