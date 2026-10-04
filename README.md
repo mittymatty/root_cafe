@@ -26,6 +26,9 @@ Hope you enjoy it! :D
 -When you think your drink is done, press "serve drink" at the top of the screen.
 Repeat this until all customers are served!
 
+**controls:** 
+just your mouse
+
 
 
   
